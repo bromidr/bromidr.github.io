@@ -1,0 +1,126 @@
+@import "normalize";
+@import "variables";
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @media #{$mq-small} {
+    font-size: 1.125em;
+  }
+
+  @media #{$mq-medium} {
+    font-size: 1.25em;
+  }
+
+  @media #{$mq-large} {
+    font-size: 1.375em;
+  }
+
+  @media #{$mq-xlarge} {
+    font-size: 1.5em;
+  }
+
+  @media #{$mq-xxlarge} {
+    font-size: 1.625em;
+  }
+}
+
+header#pageHeader {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+main#pageTorso {
+  flex-grow: 1;
+  margin: 0 4%;
+  color: #343434; /* jet black */
+  display: flex;
+  flex-direction: column;
+
+  @media #{$mq-small} {
+    margin: 1em 8%;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  @media #{$mq-medium} {
+    margin: 1em 12%;
+  }
+
+  @media #{$mq-large} {
+    margin: 1em 16%;
+  }
+
+  @media #{$mq-xlarge} {
+    margin: 1em 20%;
+  }
+}
+
+main#pageTorso > aside#mainAside {
+  flex-shrink: 0;
+  margin: 0.5em 0;
+  background-color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  @media #{$mq-small} {
+    margin-top: 0;
+    margin-right: 1em;
+    flex-direction: column;
+  }
+
+  a {
+    margin: 0.5em;
+    color: inherit;
+    text-align: center;
+  }
+}
+
+main#pageTorso > section#mainContent,
+main#pageTorso > article#mainContent {
+  flex-grow: 1;
+
+  & > header {
+    border-top: 1px dotted #343434; /* jet black */
+    border-bottom: 1px dotted #343434; /* jetblack */
+    padding: 0.5em 0;
+  }
+
+  a {
+    color: #008080; /* teal */
+    text-decoration: none;
+
+    &.category {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &.contributor {
+      font-size: smaller;
+    }
+  }
+
+  blockquote {
+    padding: 1rem;
+    border-left: 0.5rem solid #343434; /* jet black */
+    background-color: #F8F8FF; /* ghost white */
+  }
+
+  p {
+    &.excerpt {
+      margin: 0;
+      color: #A9A9A9; /* dark gray */
+    }
+  }
+
+  time {
+    font-size: smaller;
+  }
+}
