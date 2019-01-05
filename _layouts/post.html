@@ -5,7 +5,7 @@ layout: default
 <article id="mainContent">
     <header>
         {%- for page_category in page.categories -%}
-            {%-  assign site_category = site.category | where: 'title', page_category | first  -%}
+            {%- assign site_category = site.category | where: 'title', page_category | first  -%}
             {%- if site_category -%}
                 <a href="{{- site_category.url -}}" class="category">{{- site_category.title -}}</a>
             {%- endif -%}
@@ -17,12 +17,12 @@ layout: default
             {%- for page_contributor in page.contributors -%}
                 {%- assign site_contributor = site.contributor | where: "title", page_contributor | first -%}
                 {%- if site_contributor -%}
-                    {%- unless first -%},{%- endunless -%}
+                    {% unless first %} , {% endunless %}
                     <a href="{{- site_contributor.url -}}" class="contributor">{{- site_contributor.title -}}</a>
                     {%- assign first = false -%}
                 {%- endif -%}
             {%- endfor -%}
-            {%- unless first -%}|{%- endunless -%}
+            {% unless first %} | {% endunless %}
         {%- endif -%}
         <time datetime="{{- page.date | date: "%F %T%z" -}}">{{- page.date | date: "%B %d, %Y" -}}</time>
     </header>

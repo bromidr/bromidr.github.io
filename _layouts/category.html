@@ -2,24 +2,29 @@
 layout: page
 ---
 
-{%- for post in site.categories[page.title] -%}
-    <article>
-        <header>
-            <h3><a href="{{- post.url -}}">{{- post.title -}}</a></h3>
-            {%- if site.contributor.size > 1 -%}
-                {%- assign first = true -%}
-                {%- for post_contributor in post.contributors -%}
-                    {%- assign site_contributor = site.contributor | where: "title", post_contributor | first -%}
-                    {%- if site_contributor -%}
-                        {%- unless first -%},{%- endunless -%}
-                        <a href="{{- site_contributor.url -}}" class="contributor">{{- site_contributor.title -}}</a>
-                        {%- assign first = false -%}
-                    {%- endif -%}
-                {%- endfor -%}
-                {%- unless first -%}|{%- endunless -%}
-            {%- endif -%}
-            <time datetime="{{- post.date | date: "%F %T%z" -}}">{{- post.date | date: "%B %d, %Y" -}}</time>
-        </header>
-        <p>{{- post.excerpt -}}</p>
-    </article>
-{%- endfor -%}
+{%- assign filtered_posts = site.posts | where: "categories", page.title -%}
+{%- if filtered_posts.size == 0 -%}
+    <p>No posts have been published under this category yet. Please check back later. Thanks!</p>
+{%- else -%}
+    {%- for post in filtered_posts -%}
+        <article>
+            <header>
+                <h3><a href="{{- post.url -}}">{{- post.title -}}</a></h3>
+                {%- if site.contributor.size > 1 -%}
+                    {%- assign first = true -%}
+                    {%- for post_contributor in post.contributors -%}
+                        {%- assign site_contributor = site.contributor | where: "title", post_contributor | first -%}
+                        {%- if site_contributor -%}
+                            {% unless first %} , {% endunless %}
+                            <a href="{{- site_contributor.url -}}" class="contributor">{{- site_contributor.title -}}</a>
+                            {%- assign first = false -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                    {% unless first %} | {% endunless %}
+                {%- endif -%}
+                <time datetime="{{- post.date | date: "%F %T%z" -}}">{{- post.date | date: "%B %d, %Y" -}}</time>
+            </header>
+            <p>{{- post.excerpt -}}</p>
+        </article>
+    {%- endfor -%}
+{%- endif -%}
