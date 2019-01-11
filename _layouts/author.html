@@ -2,10 +2,11 @@
 layout: page
 ---
 
-{%- if site.posts.size == 0 -%}
-    <p>No posts have been published yet. Please check back later. Thanks!</p>
+{%- assign filtered_posts = site.posts | where: "authors", page.title -%}
+{%- if filtered_posts.size == 0 -%}
+    <p>This author has not published any posts yet. Please check back later. Thanks!</p>
 {%- else -%}
-    {%- for post in site.posts -%}
+    {%- for post in filtered_posts -%}
         <article>
             <header>
                 <h3><a href="{{- post.url -}}">{{- post.title | escape -}}</a></h3>

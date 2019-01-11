@@ -9,14 +9,15 @@ layout: page
     {%- for post in filtered_posts -%}
         <article>
             <header>
-                <h3><a href="{{- post.url -}}">{{- post.title -}}</a></h3>
-                {%- if site.contributor.size > 1 -%}
+                <h3><a href="{{- post.url -}}">{{- post.title | escape -}}</a></h3>
+                {%- if site.data.authors.size > 1 -%}
                     {%- assign first = true -%}
-                    {%- for post_contributor in post.contributors -%}
-                        {%- assign site_contributor = site.contributor | where: "title", post_contributor | first -%}
-                        {%- if site_contributor -%}
+                    {%- for post_author in post.authors -%}
+                        {%- assign data_author = site.data.authors[post_author] -%}
+                        {%- assign site_author = site.author | where: "title", post_author | first -%}
+                        {%- if data_author and site_author -%}
                             {% unless first %} , {% endunless %}
-                            <a href="{{- site_contributor.url -}}" class="contributor">{{- site_contributor.title -}}</a>
+                            <a href="{{- site_author.url -}}" class="author">{{- data_author.name | escape -}}</a>
                             {%- assign first = false -%}
                         {%- endif -%}
                     {%- endfor -%}
@@ -24,7 +25,7 @@ layout: page
                 {%- endif -%}
                 <time datetime="{{- post.date | date: "%F %T%z" -}}">{{- post.date | date: "%B %d, %Y" -}}</time>
             </header>
-            <p>{{- post.excerpt -}}</p>
+            <p>{{- post.description | escape -}}</p>
         </article>
     {%- endfor -%}
 {%- endif -%}

@@ -4,8 +4,8 @@ layout: default
 
 <section id="mainContent">
   <header>
-    <h1>{{- page.title -}}</h1>
-    <p class="excerpt">{{- page.description -}}</p>
+    <h1>{{- page.title | escape -}}</h1>
+    <p class="description">{{- page.description | escape -}}</p>
   </header>
   {{- content -}}
 </section>

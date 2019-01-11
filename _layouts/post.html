@@ -10,15 +10,16 @@ layout: default
                 <a href="{{- site_category.url -}}" class="category">{{- site_category.title -}}</a>
             {%- endif -%}
         {%- endfor -%}
-        <h1>{{- page.title -}}</h1>
-        <p class="excerpt">{{- page.excerpt -}}</p>
-        {%- if site.contributor.size > 1 -%}
+        <h1>{{- page.title | escape -}}</h1>
+        <p class="description">{{- page.description | escape -}}</p>
+        {%- if site.data.authors.size > 1 -%}
             {%- assign first = true -%}
-            {%- for page_contributor in page.contributors -%}
-                {%- assign site_contributor = site.contributor | where: "title", page_contributor | first -%}
-                {%- if site_contributor -%}
+            {%- for page_author in page.authors -%}
+                {%- assign data_author = site.data.authors[page_author] -%}
+                {%- assign site_author = site.author | where: "title", page_author | first -%}
+                {%- if data_author and site_author -%}
                     {% unless first %} , {% endunless %}
-                    <a href="{{- site_contributor.url -}}" class="contributor">{{- site_contributor.title -}}</a>
+                    <a href="{{- site_author.url -}}" class="author">{{- data_author.name | escape -}}</a>
                     {%- assign first = false -%}
                 {%- endif -%}
             {%- endfor -%}

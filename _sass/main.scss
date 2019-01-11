@@ -102,7 +102,7 @@ main#pageTorso > article#mainContent {
       text-transform: uppercase;
     }
 
-    &.contributor {
+    &.author {
       font-size: smaller;
     }
   }
@@ -114,7 +114,7 @@ main#pageTorso > article#mainContent {
   }
 
   p {
-    &.excerpt {
+    &.description {
       margin: 0;
       color: #A9A9A9; /* dark gray */
     }

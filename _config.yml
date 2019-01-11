@@ -15,6 +15,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: bromidr
+logo: https://www.github.com/bromidr.png
 description: >- # this means to ignore newlines until "baseurl:"
   A way to share the Word of God to those who happen upon this place
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -23,47 +24,61 @@ permalink: /:categories/:year-:month-:day-:title
 
 # Social settings
 repository: bromidr/bromidr.github.io
-facebook: bromidr
-twitter: bromidr
+facebook:
+  username: bromidr
+twitter:
+  username: bromidr
+  card: summary
 email: info@bromidr.com
+
+social:
+  name: bromidr
+  links:
+    - https://www.github.com/bromidr
+    - https://www.facebook.com/bromidr
+    - https://www.twitter.com/bromidr
+
+webmaster_verifications:
+  google: 2KS_-18gUu5OWi-B1fApqm5LfTcELiHI05bWO9aV8mo
 
 # Collections and default settings
 collections:
   category:
     output: true
     permalink: /:collection/:name
-  contributor:
+  author:
     output: true
     permalink: /:collection/:name
 
 defaults:
   - scope:
-      path: ""
+      path: "_category"
       type: "category"
     values:
       layout: "category"
   - scope:
-      path: ""
-      type: "contributor"
+      path: "_author"
+      type: "author"
     values:
-      layout: "contributor"
+      layout: "author"
   - scope:
-      path: ""
+      path: "pages"
       type: "pages"
     values:
       layout: "page"
   - scope:
-      path: ""
+      path: "_posts"
       type: "posts"
     values:
       layout: "post"
-      contributors: [Bromidr]
+      authors: [Bromidr]
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
