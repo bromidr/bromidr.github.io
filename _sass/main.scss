@@ -27,11 +27,6 @@ body {
   }
 }
 
-header#pageHeader {
-  flex-shrink: 0;
-  text-align: center;
-}
-
 main#pageTorso {
   flex-grow: 1;
   margin: 0 4%;
@@ -117,6 +112,11 @@ main#pageTorso > article#mainContent {
     &.description {
       margin: 0;
       color: #A9A9A9; /* dark gray */
+    }
+    &.image {
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      overflow: hidden;
     }
   }
 

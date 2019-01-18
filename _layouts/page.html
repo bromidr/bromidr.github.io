@@ -7,5 +7,12 @@ layout: default
     <h1>{{- page.title | escape -}}</h1>
     <p class="description">{{- page.description | escape -}}</p>
   </header>
+
+  {%- if page.image -%}
+    <p class="image">
+      <img src="{{- page.image -}}" />
+    </p>
+  {%- endif -%}
+
   {{- content -}}
 </section>

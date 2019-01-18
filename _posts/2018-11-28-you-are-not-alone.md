@@ -1,5 +1,5 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/51283889-8a35c500-19b7-11e9-938a-b920b6bae0b3.jpg
+image: https://user-images.githubusercontent.com/45976390/51361906-88473100-1a9f-11e9-9cde-c1dc80544c5d.jpg
 categories: [Culture]
 tags: [Internet Culture, Social Media, Fake News]
 description: >- # description must be indented because we are using block scalar
