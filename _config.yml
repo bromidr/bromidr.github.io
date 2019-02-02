@@ -43,6 +43,9 @@ webmaster_verifications:
 
 # Collections and default settings
 collections:
+  viz:
+    output: true
+    permalink: /:collection/:name
   category:
     output: true
     permalink: /:collection/:name
@@ -51,22 +54,32 @@ collections:
     permalink: /:collection/:name
 
 defaults:
-  - scope:
+  -
+    scope:
+      path: "_viz"
+      type: "viz"
+    values:
+      layout: "viz"
+  -
+    scope:
       path: "_category"
       type: "category"
     values:
       layout: "category"
-  - scope:
+  -
+    scope:
       path: "_author"
       type: "author"
     values:
       layout: "author"
-  - scope:
+  -
+    scope:
       path: "pages"
       type: "pages"
     values:
       layout: "page"
-  - scope:
+  -
+    scope:
       path: "_posts"
       type: "posts"
     values:

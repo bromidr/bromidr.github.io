@@ -37,7 +37,6 @@ main#pageTorso {
   @media #{$mq-small} {
     margin: 1em 8%;
     flex-direction: row;
-    align-items: flex-start;
     justify-content: center;
   }
 
@@ -56,6 +55,7 @@ main#pageTorso {
 
 main#pageTorso > aside#mainAside {
   flex-shrink: 0;
+  align-self: flex-start;
   margin: 0.5em 0;
   background-color: white;
   position: -webkit-sticky;

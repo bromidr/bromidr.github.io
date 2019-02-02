@@ -3,8 +3,8 @@ image: https://user-images.githubusercontent.com/45976390/52007819-54a3d800-249d
 categories: [Life]
 tags: [Life And Death]
 description: >- # description must be indented because we are using block scalar
-  Eternal life is the Lord God's intent for all of us, however it was derailed
-  when death was birthed. The Lord made a way for you to realize His original
+  Eternal life is the Lord God's intent for all of us. His intent was derailed
+  when death was birthed. However, the Lord made a way for you to realize His
   intent.
 ---
 
