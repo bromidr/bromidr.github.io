@@ -118,6 +118,11 @@
     }
   });
 
+  cySome.on("resize", function (event) {
+    event.target.center();
+    event.target.fit();
+  });
+
   function updateView (nodeId) {
     if ("#" !== nodeId.charAt(0)) {
       nodeId = "#" + nodeId;

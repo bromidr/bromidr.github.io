@@ -55,7 +55,6 @@ main#pageTorso {
 
 main#pageTorso > aside#mainAside {
   flex-shrink: 0;
-  align-self: flex-start;
   margin: 0.5em 0;
   background-color: white;
   position: -webkit-sticky;
@@ -69,6 +68,7 @@ main#pageTorso > aside#mainAside {
     margin-top: 0;
     margin-right: 1em;
     flex-direction: column;
+    align-self: flex-start;
   }
 
   a {
