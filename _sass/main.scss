@@ -113,11 +113,6 @@ main#pageTorso > article#mainContent {
       margin: 0;
       color: #A9A9A9; /* dark gray */
     }
-    &.image {
-      height: 0;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      overflow: hidden;
-    }
   }
 
   time {
