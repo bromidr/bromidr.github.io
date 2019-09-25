@@ -5,8 +5,8 @@
 
 <div id="cy" style="width: 100%; height: 100%;"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.3.3/cytoscape.min.js"
-        integrity="sha256-K6FGD6tqGrGTOGMAJLDqbbtXwCgz4Evfy3bVfGeVzy8="
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.8.5/cytoscape.min.js"
+        integrity="sha256-5R5pkAXXvr3YONjgD6xgvsekZYpx29Ezq05QTYnDo1M="
         crossorigin="anonymous"></script>
 
 <script>
@@ -118,17 +118,13 @@
     }
   });
 
-  cySome.on("resize", function (event) {
-    event.target.center();
-    event.target.fit();
-  });
-
   function updateView (nodeId) {
     if ("#" !== nodeId.charAt(0)) {
       nodeId = "#" + nodeId;
     }
     cySome.elements().remove();
-    cySome.add(cyAll.nodes(nodeId).closedNeighborhood().closedNeighborhood());
+    cySome.add(cyAll.nodes(nodeId)
+                .closedNeighborhood().closedNeighborhood().closedNeighborhood());
     cySome.nodes(nodeId).selectify().select().unselectify();
     cySome.layout({
       name: "cose",
