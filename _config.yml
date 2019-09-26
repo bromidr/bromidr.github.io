@@ -24,22 +24,10 @@ permalink: /:categories/:year-:month-:day-:title
 
 # Social settings
 repository: bromidr/bromidr.github.io
-facebook:
-  username: bromidr
-twitter:
-  username: bromidr
-  card: summary
+facebook: bromidr
+instagram: bromidr
+twitter: bromidr
 email: info@bromidr.com
-
-social:
-  name: bromidr
-  links:
-    - https://www.github.com/bromidr
-    - https://www.facebook.com/bromidr
-    - https://www.twitter.com/bromidr
-
-webmaster_verifications:
-  google: 2KS_-18gUu5OWi-B1fApqm5LfTcELiHI05bWO9aV8mo
 
 # Collections and default settings
 collections:
@@ -84,14 +72,13 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      authors: [Bromidr]
+      authors: [Bromide Roach]
 
 # Build settings
 markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-seo-tag
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

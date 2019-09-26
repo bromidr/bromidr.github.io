@@ -1,0 +1,38 @@
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@{{- site.twitter -}}">
+
+<meta property="og:title" content="{{- page.title | default: site.title | escape -}}">
+<meta property="og:image" content="{{- page.image | default: site.logo -}}">
+<meta property="og:url" content="{{- page.url | absolute_url -}}">
+<meta property="og:description" content="{{- page.description | default: site.description | escape -}}">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="{{- site.title -}}">
+
+{%- if "post" == page.layout -%}
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="{{- page.date | date: '%Y-%m-%d' -}}">
+    {%- for page_author in page.authors -%}
+        {%- assign site_author = site.author | where: "title", page_author | first -%}
+        {%- if site_author -%}
+            <meta property="article:author" content="{{- site_author.url | absolute_url -}}">
+        {%- endif -%}
+    {%- endfor -%}
+    {%- for category in page.categories -%}
+        <meta property="article:section" content="{{- category -}}">
+    {%- endfor -%}
+    {%- for tag in page.tags -%}
+        <meta property="article:tag" content="{{- tag -}}">
+    {%- endfor -%}
+    <title>{{ page.title }} | {{site.title}}</title>
+{%- else -%}
+    <meta property="og:type" content="website">
+    {%- if "author" == page.layout -%}
+        <title>Posts by {{page.title}} | {{site.title}}</title>
+    {%- elsif "category" == page.layout -%}
+        <title>Posts in {{page.title}} | {{site.title}}</title>
+    {%- else -%}
+        <title>Home | {{site.title}}</title>
+    {%- endif -%}
+{%- endif -%}
+
+<link rel="canonical" href="{{- page.url | absolute_url -}}" />

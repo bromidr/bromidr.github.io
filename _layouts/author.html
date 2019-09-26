@@ -10,14 +10,13 @@ layout: page
         <article>
             <header>
                 <h3><a href="{{- post.url -}}">{{- post.title | escape -}}</a></h3>
-                {%- if site.data.authors.size > 1 -%}
+                {%- if site.author.size > 1 -%}
                     {%- assign first = true -%}
                     {%- for post_author in post.authors -%}
-                        {%- assign data_author = site.data.authors[post_author] -%}
                         {%- assign site_author = site.author | where: "title", post_author | first -%}
-                        {%- if data_author and site_author -%}
+                        {%- if site_author -%}
                             {% unless first %} , {% endunless %}
-                            <a href="{{- site_author.url -}}" class="author">{{- data_author.name | escape -}}</a>
+                            <a href="{{- site_author.url -}}" class="author">{{- site_author.name | default: site_author.title | escape -}}</a>
                             {%- assign first = false -%}
                         {%- endif -%}
                     {%- endfor -%}
