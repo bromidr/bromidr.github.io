@@ -1,31 +1,31 @@
 <aside id="mainAside">
-  <a href="/"><i class="fas fa-home fa-lg"></i></a>
+  <a href="/"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg></a>
 
   {%- if "author" == page.layout -%}
       {%- if page.github -%}
-          <a href="https://www.github.com/{{- page.github -}}" rel="noopener noreferrer"><i class="fab fa-github fa-lg"></i></a>
+          <a href="https://www.github.com/{{- page.github -}}" rel="noopener noreferrer"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
       {%- endif -%}
 
       {%- if page.facebook -%}
-          <a href="https://www.facebook.com/{{- page.facebook -}}" rel="noopener noreferrer"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="https://www.facebook.com/{{- page.facebook -}}" rel="noopener noreferrer"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
       {%- endif -%}
 
       {%- if page.twitter -%}
-          <a href="https://www.twitter.com/{{- page.twitter -}}" rel="noopener noreferrer"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="https://www.twitter.com/{{- page.twitter -}}" rel="noopener noreferrer"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
       {%- endif -%}
 
       {%- if page.email -%}
-          <a id="email" href="#"><i class="fas fa-envelope fa-lg"></i></a>
+          <a id="email" href="#"><svg class="icon icon-envelop"><use xlink:href="#icon-envelop"></use></svg></a>
       {%- endif -%}
 
   {%- elsif "post" == page.layout -%}
 
       {%- if page.previous -%}
-          <a href="{{- page.previous.url -}}" rel="prev"><i class="fas fa-arrow-left fa-lg"></i></a>
+          <a href="{{- page.previous.url -}}" rel="prev"><svg class="icon icon-arrow-left2"><use xlink:href="#icon-arrow-left2"></use></svg></a>
       {%- endif -%}
 
       {%- if page.next -%}
-          <a href="{{- page.next.url -}}" rel="next"><i class="fas fa-arrow-right fa-lg"></i></a>
+          <a href="{{- page.next.url -}}" rel="next"><svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a>
       {%- endif -%}
 
       {%- assign description = page.description | url_encode | replace: "+", "%20" -%}
@@ -34,24 +34,24 @@
       {%- assign subject = page.title | url_encode | replace: "+", "%20" -%}
       {%- assign body = description | append: '%0A%0A' | append: url -%}
 
-      <a href="https://www.facebook.com/sharer/sharer.php?u={{- url -}}" rel="noopener noreferrer"><i class="fab fa-facebook fa-lg"></i></a>
-      <a href="https://www.twitter.com/intent/tweet?text={{- description -}}&url={{- url -}}&hashtags={{- tags -}}" rel="noopener noreferrer"><i class="fab fa-twitter fa-lg"></i></a>
-      <a href="mailto:?subject={{- subject -}}&body={{- body -}}"><i class="fas fa-envelope fa-lg"></i></a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{- url -}}" rel="noopener noreferrer"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
+      <a href="https://www.twitter.com/intent/tweet?text={{- description -}}&url={{- url -}}&hashtags={{- tags -}}" rel="noopener noreferrer"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
+      <a href="mailto:?subject={{- subject -}}&body={{- body -}}"><svg class="icon icon-envelop"><use xlink:href="#icon-envelop"></use></svg></a>
 
   {%- else -%}
 
-      <a href="{{- site.github.owner_url -}}"><i class="fab fa-github fa-lg"></i></a>
+      <a href="{{- site.github.owner_url -}}" rel="noopener noreferrer"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
 
       {%- if site.facebook -%}
-          <a href="https://www.facebook.com/{{- site.facebook -}}" rel="noopener noreferrer"><i class="fab fa-facebook fa-lg"></i></a>
+          <a href="https://www.facebook.com/{{- site.facebook -}}" rel="noopener noreferrer"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
       {%- endif -%}
 
       {%- if site.twitter -%}
-          <a href="https://www.twitter.com/{{- site.twitter -}}" rel="noopener noreferrer"><i class="fab fa-twitter fa-lg"></i></a>
+          <a href="https://www.twitter.com/{{- site.twitter -}}" rel="noopener noreferrer"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
       {%- endif -%}
 
       {%- if site.email -%}
-          <a id="email" href="#"><i class="fas fa-envelope fa-lg"></i></a>
+          <a id="email" href="#"><svg class="icon icon-envelop"><use xlink:href="#icon-envelop"></use></svg></a>
       {%- endif -%}
 
   {%- endif -%}
