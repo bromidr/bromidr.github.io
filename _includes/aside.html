@@ -1,24 +1,7 @@
 <aside id="mainAside">
   <a href="/"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg></a>
 
-  {%- if "author" == page.layout -%}
-      {%- if page.github -%}
-          <a href="https://www.github.com/{{- page.github -}}" rel="noopener noreferrer"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
-      {%- endif -%}
-
-      {%- if page.facebook -%}
-          <a href="https://www.facebook.com/{{- page.facebook -}}" rel="noopener noreferrer"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
-      {%- endif -%}
-
-      {%- if page.twitter -%}
-          <a href="https://www.twitter.com/{{- page.twitter -}}" rel="noopener noreferrer"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
-      {%- endif -%}
-
-      {%- if page.email -%}
-          <a id="email" href="#"><svg class="icon icon-envelop"><use xlink:href="#icon-envelop"></use></svg></a>
-      {%- endif -%}
-
-  {%- elsif "post" == page.layout -%}
+  {%- if "post" == page.layout -%}
 
       {%- if page.previous -%}
           <a href="{{- page.previous.url -}}" rel="prev"><svg class="icon icon-arrow-left2"><use xlink:href="#icon-arrow-left2"></use></svg></a>
@@ -40,18 +23,34 @@
 
   {%- else -%}
 
-      <a href="{{- site.github.owner_url -}}" rel="noopener noreferrer"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
-
-      {%- if site.facebook -%}
-          <a href="https://www.facebook.com/{{- site.facebook -}}" rel="noopener noreferrer"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
+      {%- if "author" == page.layout -%}
+          {%- assign github_username = page.github -%}
+          {%- assign facebook_username = page.facebook -%}
+          {%- assign twitter_username = page.twitter -%}
+          {%- assign email_address = page.email -%}
+      {%- else -%}
+          {%- assign github_username = site.github.owner_name -%}
+          {%- assign facebook_username = site.facebook -%}
+          {%- assign twitter_username = site.twitter -%}
+          {%- assign email_address = site.email -%}
       {%- endif -%}
 
-      {%- if site.twitter -%}
-          <a href="https://www.twitter.com/{{- site.twitter -}}" rel="noopener noreferrer"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
+      {%- if github_username -%}
+          <a href="https://www.github.com/{{- github_username -}}" rel="noopener noreferrer"><svg class="icon icon-github"><use xlink:href="#icon-github"></use></svg></a>
       {%- endif -%}
 
-      {%- if site.email -%}
-          <a id="email" href="#"><svg class="icon icon-envelop"><use xlink:href="#icon-envelop"></use></svg></a>
+      {%- if facebook_username -%}
+          <a href="https://www.facebook.com/{{- facebook_username -}}" rel="noopener noreferrer"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
+      {%- endif -%}
+
+      {%- if twitter_username -%}
+          <a href="https://www.twitter.com/{{- twitter_username -}}" rel="noopener noreferrer"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
+      {%- endif -%}
+
+      {%- if email_address -%}
+          <a id="email" href="#" target="_top" onclick="(function (el) {
+            el.setAttribute('href', 'mailto:{{- email_address -}}');
+          })(this);"><svg class="icon icon-envelop"><use xlink:href="#icon-envelop"></use></svg></a>
       {%- endif -%}
 
   {%- endif -%}

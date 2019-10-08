@@ -7,30 +7,7 @@
 
     {%- include seo.html -%}
 
-    <link rel="stylesheet"
-          href="{{- "/assets/css/style.css" -}}">
-
-    <script>
-      /**
-       * Apparently, this will help prevent bots from harvesting email addresses
-       * from your website and subsequently sending spam to the harvested emails
-       */
-      function setEmail () {
-        var email = document.getElementById("email");
-        if (email) {
-          email.onclick = function () {
-            {%- if "author" == page.layout -%}
-                email.setAttribute("href", "mailto:{{- page.email -}}");
-            {%- else -%}
-                email.setAttribute("href", "mailto:{{- site.email -}}");
-            {%- endif -%}
-          }
-        }
-      }
-      window.onload = function () {
-        setEmail();
-      };
-    </script>
+    <link rel="stylesheet" href="{{- "/assets/css/style.css" -}}">
   </head>
   <body>
     {%- include symbol-defs.svg -%}
