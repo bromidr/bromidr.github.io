@@ -94,12 +94,6 @@ main#pageTorso > section#mainContent,
 main#pageTorso > article#mainContent {
   flex-grow: 1;
 
-  & > header {
-    border-top: 1px dotted #343434; /* jet black */
-    border-bottom: 1px dotted #343434; /* jetblack */
-    padding: 0.5em 0;
-  }
-
   a {
     color: #008080; /* teal */
     text-decoration: none;
@@ -124,6 +118,14 @@ main#pageTorso > article#mainContent {
     &.description {
       margin: 0;
       color: #A9A9A9; /* dark gray */
+    }
+  }
+
+  div {
+    &.hero {
+      border-top: 1px dotted #343434; /* jetblack */
+      border-bottom: 1px dotted #343434; /* jetblack */
+      padding: 0.5em 0;
     }
   }
 

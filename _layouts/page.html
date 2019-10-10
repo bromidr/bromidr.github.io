@@ -6,13 +6,9 @@ layout: default
   <header>
     <h1>{{- page.title | escape -}}</h1>
     <p class="description">{{- page.description | escape -}}</p>
+    {%- if page.image -%}
+        <div class="hero"><img src="{{- page.image -}}" /></div>
+    {%- endif -%}
   </header>
-
-  {%- if page.image -%}
-    <p class="image">
-      <img src="{{- page.image -}}" />
-    </p>
-  {%- endif -%}
-
   {{- content -}}
 </section>

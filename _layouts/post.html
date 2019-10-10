@@ -25,13 +25,9 @@ layout: default
             {% unless first %} | {% endunless %}
         {%- endif -%}
         <time datetime="{{- page.date | date: "%F %T%z" -}}">{{- page.date | date: "%B %d, %Y" -}}</time>
+        {%- if page.image -%}
+            <div class="hero"><img src="{{- page.image -}}" /></div>
+        {%- endif -%}
     </header>
-
-    {%- if page.image -%}
-      <p class="image">
-        <img src="{{- page.image -}}" />
-      </p>
-    {%- endif -%}
-
     {{- content -}}
 </article>
