@@ -1,7 +1,7 @@
 <aside id="mainAside">
   <a href="/"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg></a>
 
-  {%- if "post" == page.layout -%}
+  {%- if "posts" == page.collection -%}
 
       {%- if page.previous -%}
           <a href="{{- page.previous.url -}}" rel="prev"><svg class="icon icon-arrow-left2"><use xlink:href="#icon-arrow-left2"></use></svg></a>
@@ -23,7 +23,7 @@
 
   {%- else -%}
 
-      {%- if "author" == page.layout -%}
+      {%- if "author" == page.collection -%}
           {%- assign github_username = page.github -%}
           {%- assign facebook_username = page.facebook -%}
           {%- assign twitter_username = page.twitter -%}

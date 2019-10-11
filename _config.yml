@@ -33,13 +33,10 @@ email: info@bromidr.com
 collections:
   viz:
     output: true
-    permalink: /:collection/:name
   category:
     output: true
-    permalink: /:collection/:name
   author:
     output: true
-    permalink: /:collection/:name
 
 defaults:
   -
@@ -53,13 +50,13 @@ defaults:
       path: "_category"
       type: "category"
     values:
-      layout: "category"
+      layout: "archive"
   -
     scope:
       path: "_author"
       type: "author"
     values:
-      layout: "author"
+      layout: "archive"
   -
     scope:
       path: "pages"
@@ -79,15 +76,3 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
