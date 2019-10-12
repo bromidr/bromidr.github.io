@@ -1,0 +1,144 @@
+<div id="cy" style="width: {{- include.width | default: "100%" -}}; height: {{- include.height | default: "100%" -}};"></div>
+
+<script defer src="https://unpkg.com/cytoscape@3.8.5/dist/cytoscape.min.js"></script>
+<script defer src="https://unpkg.com/webcola@3.4.0/WebCola/cola.min.js"></script>
+<script defer src="https://unpkg.com/cytoscape-cola@2.3.0/cytoscape-cola.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    var elements = [];
+
+    {%- assign family = nil -%}
+    {%- if page.parent -%}{%- assign family = family | concat: page.parent -%}{%- endif -%}
+    {%- if page.sibling -%}{%- assign family = family | concat: page.sibling -%}{%- endif -%}
+    {%- if page.spouse -%}{%- assign family = family | concat: page.spouse -%}{%- endif -%}
+    {%- if page.knows -%}{%- assign family = family | concat: page.knows -%}{%- endif -%}
+    {%- if page.children -%}{%- assign family = family | concat: page.children -%}{%- endif -%}
+
+    {%- assign people = site.bible | where: "type", "Person" -%}
+    {%- for person in people -%}
+
+        {%- if family == nil or family contains person.title or page.title == person.title -%}
+
+            elements.push({
+                data: {
+                    id: "{{- person.title -}}",
+                    type: "{{- person.type -}}",
+                    name: "{{- person.name | escape -}}",
+                    gender: "{{- person.gender -}}",
+                    url: "{{- person.url -}}"
+                }
+            });
+
+            {%- if person.parent.size == 1 -%}
+                {%- for parent in person.parent -%}
+                    {%- if family == nil or family contains parent or parent == page.title -%}
+                        elements.push({
+                            data: {
+                                source: "{{- parent -}}",
+                                target: "{{- person.title -}}",
+                                type: "Child"
+                            },
+                            selectable: false
+                        });
+                    {%- endif -%}
+                {%- endfor -%}
+            {%- elsif person.parent.size > 1 -%}
+                {%- assign familyId = person.parent | sort | join: "+" | append: "+Children" -%}
+                elements.push({
+                    data: {
+                        id: "{{- familyId -}}",
+                        type: "Family",
+                        name: ""
+                    },
+                    selectable: false
+                });
+                {%- for parent in person.parent -%}
+                    {%- if family == nil or family contains parent or parent == page.title -%}
+                        elements.push({
+                            data: {
+                                source: "{{- parent -}}",
+                                target: "{{- familyId -}}",
+                                type: "Parent"
+                            },
+                            selectable: false
+                        });
+                    {%- endif -%}
+                {%- endfor -%}
+                elements.push({
+                    data: {
+                        source: "{{- familyId -}}",
+                        target: "{{- person.title -}}",
+                        type: "Child"
+                    },
+                    selectable: false
+                });
+            {%- endif -%}
+        {%- endif -%}
+    {%- endfor -%}
+
+    var cy = cytoscape({
+      container: document.getElementById("cy"),
+      elements: elements,
+      style: [{
+        selector: "node",
+        style: {
+          "background-color": function (ele) {
+            var id = ele.data("id");
+            var gender = ele.data("gender");
+            if ("Male" === gender) {
+              return "{{- page.title -}}" === id ? "#0070BB" : "#89CFF0"; // spanish blue : baby blue
+            }
+            else if ("Female" === gender) {
+              return "{{- page.title -}}" === id ? "#FF69B4" : "#FFC0CB"; // hotpink : pink
+            }
+            else {
+              var type = ele.data("type");
+              if ("Person" === type) {
+                return "{{- page.title -}}" === id ? "#2E8B57" : "#71EEB8"; // sea green : seafoam green
+              }
+              else {
+                return "{{- page.title -}}" === id ? "#696969" : "#C0C0C0"; // dim gray : silver
+              }
+            }
+          },
+          "label": "data(name)",
+          "text-valign": "bottom",
+          "text-margin-y": 5
+        }
+      }, {
+        selector: "edge",
+        style: {
+          "line-color": "#C0C0C0", // silver
+          "mid-target-arrow-shape": "triangle",
+          "mid-target-arrow-fill": "hollow",
+          "arrow-scale": 1.2
+        }
+      }, {
+        selector: "edge[type='Parent']",
+        style: {
+          "line-style": "dashed"
+        }
+      }],
+      autoungrabify: true,
+      userPanningEnabled: false,
+      userZoomingEnabled: false
+    });
+
+    cy.on("tap", "node", function (event) {
+      if (event.target.selectable()) {
+        window.location.href = event.target.data("url");
+      }
+    });
+
+    cy.layout({
+      name: "cola",
+      padding: 10,
+      flow: {
+        axis: "y",
+        minSeparation: 50
+      },
+      infinite: true
+    }).run();
+
+  });
+</script>

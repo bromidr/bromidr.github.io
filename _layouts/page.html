@@ -4,11 +4,21 @@ layout: default
 
 <section id="mainContent">
   <header>
-    <h1>{{- page.title | escape -}}</h1>
+    <h1>
+        {%- if "bible" == page.collection and "Person" == page.type -%}
+            {{- page.name | escape -}}
+        {%- else -%}
+            {{- page.title | escape -}}
+        {%- endif -%}
+    </h1>
     <p class="description">{{- page.description | escape -}}</p>
-    {%- if page.image -%}
-        <div class="hero"><img src="{{- page.image -}}" /></div>
-    {%- endif -%}
+    <div class="hero">
+        {%- if "bible" == page.collection and "Person" == page.type -%}
+            {%- include genealogy.html width="100%" height="480px" -%}
+        {%- elsif page.image -%}
+            <img src="{{- page.image -}}" />
+        {%- endif -%}
+    </div>
   </header>
   {{- content -}}
 </section>

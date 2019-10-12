@@ -8,7 +8,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="{{- site.title -}}">
 
-{%- if "post" == page.layout -%}
+{%- if "posts" == page.collection -%}
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="{{- page.date | date: '%Y-%m-%d' -}}">
     {%- for page_author in page.authors -%}
