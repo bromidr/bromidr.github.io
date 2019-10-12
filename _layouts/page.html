@@ -7,7 +7,9 @@ layout: default
     <h1>
         {%- if "bible" == page.collection and "Person" == page.type -%}
             {{ page.name | escape }}
-            <span>({{ page.alternateName | escape }})</span>
+            {% if page.alternateName %}
+                <span>({{ page.alternateName | escape }})</span>
+            {% endif %}
         {%- else -%}
             {{ page.title | escape }}
         {%- endif -%}
