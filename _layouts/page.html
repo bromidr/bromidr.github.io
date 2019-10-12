@@ -6,9 +6,10 @@ layout: default
   <header>
     <h1>
         {%- if "bible" == page.collection and "Person" == page.type -%}
-            {{- page.name | escape -}}
+            {{ page.name | escape }}
+            <span>({{ page.alternateName | escape }})</span>
         {%- else -%}
-            {{- page.title | escape -}}
+            {{ page.title | escape }}
         {%- endif -%}
     </h1>
     <p class="description">{{- page.description | escape -}}</p>

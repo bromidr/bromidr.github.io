@@ -94,6 +94,13 @@ main#pageTorso > section#mainContent,
 main#pageTorso > article#mainContent {
   flex-grow: 1;
 
+  h1 {
+    span {
+      color: #A9A9A9; /* dark gray */
+      font-size: 0.5em;
+    }
+  }
+
   a {
     color: #008080; /* teal */
     text-decoration: none;
