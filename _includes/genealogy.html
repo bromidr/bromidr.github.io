@@ -1,25 +1,31 @@
-<div id="cy" style="width: {{- include.width | default: "100%" -}}; height: {{- include.height | default: "100%" -}};"></div>
+<div id="cy" style="width: 100%; height: 100%;"></div>
 
 <script defer src="https://unpkg.com/cytoscape@3.8.5/dist/cytoscape.min.js"></script>
 <script defer src="https://unpkg.com/webcola@3.4.0/WebCola/cola.min.js"></script>
 <script defer src="https://unpkg.com/cytoscape-cola@2.3.0/cytoscape-cola.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", function (event) {
-    var elements = [];
+    var elements = {
+      nodes: [],
+      edges: []
+    };
 
-    {%- assign family = nil -%}
+    {%- assign family = "" | split: "," -%}
     {%- if page.parent -%}{%- assign family = family | concat: page.parent -%}{%- endif -%}
     {%- if page.sibling -%}{%- assign family = family | concat: page.sibling -%}{%- endif -%}
     {%- if page.spouse -%}{%- assign family = family | concat: page.spouse -%}{%- endif -%}
     {%- if page.knows -%}{%- assign family = family | concat: page.knows -%}{%- endif -%}
     {%- if page.children -%}{%- assign family = family | concat: page.children -%}{%- endif -%}
+    {%- if "Person" == page.type -%}{%- assign family = family | push: page.title -%}{%- endif -%}
+
+    {%- assign familyNodes = "" | split: "," -%}
 
     {%- assign people = site.bible | where: "type", "Person" -%}
     {%- for person in people -%}
 
-        {%- if family == nil or family contains person.title or page.title == person.title -%}
+        {%- if 0 == family.size or family contains person.title -%}
 
-            elements.push({
+            elements.nodes.push({
                 data: {
                     id: "{{- person.title -}}",
                     type: "{{- person.type -}}",
@@ -31,8 +37,8 @@
 
             {%- if person.parent.size == 1 -%}
                 {%- for parent in person.parent -%}
-                    {%- if family == nil or family contains parent or parent == page.title -%}
-                        elements.push({
+                    {%- if 0 == family.size or family contains parent -%}
+                        elements.edges.push({
                             data: {
                                 source: "{{- parent -}}",
                                 target: "{{- person.title -}}",
@@ -44,27 +50,30 @@
                 {%- endfor -%}
             {%- elsif person.parent.size > 1 -%}
                 {%- assign familyId = person.parent | sort | join: "+" | append: "+Children" -%}
-                elements.push({
-                    data: {
-                        id: "{{- familyId -}}",
-                        type: "Family",
-                        name: ""
-                    },
-                    selectable: false
-                });
-                {%- for parent in person.parent -%}
-                    {%- if family == nil or family contains parent or parent == page.title -%}
-                        elements.push({
-                            data: {
-                                source: "{{- parent -}}",
-                                target: "{{- familyId -}}",
-                                type: "Parent"
-                            },
-                            selectable: false
-                        });
-                    {%- endif -%}
-                {%- endfor -%}
-                elements.push({
+                {%- unless familyNodes contains familyId -%}
+                    elements.nodes.push({
+                        data: {
+                            id: "{{- familyId -}}",
+                            type: "Family",
+                            name: ""
+                        },
+                        selectable: false
+                    });
+                    {%- for parent in person.parent -%}
+                        {%- if 0 == family.size or family contains parent -%}
+                            elements.edges.push({
+                                data: {
+                                    source: "{{- parent -}}",
+                                    target: "{{- familyId -}}",
+                                    type: "Parent"
+                                },
+                                selectable: false
+                            });
+                        {%- endif -%}
+                    {%- endfor -%}
+                    {%- assign familyNodes = familyNodes | push: familyId -%}
+                {%- endunless -%}
+                elements.edges.push({
                     data: {
                         source: "{{- familyId -}}",
                         target: "{{- person.title -}}",
@@ -75,6 +84,18 @@
             {%- endif -%}
         {%- endif -%}
     {%- endfor -%}
+
+    {%- if 0 != family.size -%}
+        if (elements.nodes.length > 10) {
+          document.getElementById("cy").style.height = "450px";
+        }
+        else if (elements.nodes.length > 5) {
+          document.getElementById("cy").style.height = "350px";
+        }
+        else {
+          document.getElementById("cy").style.height = "250px";
+        }
+    {%- endif -%}
 
     var cy = cytoscape({
       container: document.getElementById("cy"),
@@ -133,10 +154,14 @@
     cy.layout({
       name: "cola",
       padding: 10,
+      nodeDimensionsIncludeLabels: true,
       flow: {
         axis: "y",
-        minSeparation: 50
+        minSeparation: 75
       },
+      unconstrIter: 10,
+      userConstIter: 15,
+      allConstIter: 20,
       infinite: true
     }).run();
 

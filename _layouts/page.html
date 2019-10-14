@@ -17,7 +17,7 @@ layout: default
     <p class="description">{{- page.description | escape -}}</p>
     <div class="hero">
         {%- if "bible" == page.collection and "Person" == page.type -%}
-            {%- include genealogy.html width="100%" height="480px" -%}
+            {%- include genealogy.html -%}
         {%- elsif page.image -%}
             <img src="{{- page.image -}}" />
         {%- endif -%}
