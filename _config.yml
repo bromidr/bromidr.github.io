@@ -31,8 +31,6 @@ email: info@bromidr.com
 
 # Collections and default settings
 collections:
-  viz:
-    output: true
   bible:
     output: true
   category:
@@ -41,12 +39,6 @@ collections:
     output: true
 
 defaults:
-  -
-    scope:
-      path: "_viz"
-      type: "viz"
-    values:
-      layout: "viz"
   -
     scope:
       path: "_bible"

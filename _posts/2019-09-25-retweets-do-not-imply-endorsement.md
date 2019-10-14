@@ -128,9 +128,9 @@ you should appeal to them on the basis of love.
 
 God bless.
 
-[1]: /viz/genealogy#f_abraham_sarah
-[2]: /viz/genealogy#f_nahor2_milcah
-[3]: /viz/genealogy#f_lot
+[1]: /bible/person/sarah
+[2]: /bible/person/nahor-son-of-terah
+[3]: /bible/person/lot
 [4]: https://www.scmp.com/lifestyle/health-wellness/article/2183589/are-photo-filters-harmful-how-snapchat-dysmorphia-drives
      "Are photo filters harmful? How Snapchat dysmorphia drives people to seek cosmetic surgery"
 [5]: https://www.theguardian.com/media/2015/nov/03/instagram-star-essena-oneill-quits-2d-life-to-reveal-true-story-behind-images
