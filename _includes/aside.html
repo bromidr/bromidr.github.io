@@ -13,12 +13,22 @@
 
       {%- assign description = page.description | url_encode | replace: "+", "%20" -%}
       {%- assign url = page.url | absolute_url | url_encode | replace: "+", "%20" -%}
-      {%- assign tags = page.tags | join: ',' | url_encode | replace: "+", "" -%}
+      {%- assign mentions = "" | split: "," -%}
+      {%- assign tags = "" | split: "," -%}
+      {%- for tag in page.tags -%}
+          {%- if tag contains "@" -%}
+              {%- assign mentions = mentions | push: tag -%}
+          {%- else -%}
+              {%- assign tags = tags | push: tag -%}
+          {%- endif -%}
+      {%- endfor -%}
+      {%- assign mentions = mentions | join: " " | url_encode | replace: "+", "%20" -%}
+      {%- assign tags = tags | join: "," | url_encode | replace: "+", "" -%}
       {%- assign subject = page.title | url_encode | replace: "+", "%20" -%}
       {%- assign body = description | append: '%0A%0A' | append: url -%}
 
       <a href="https://www.facebook.com/sharer/sharer.php?u={{- url -}}" rel="noopener noreferrer"><svg class="icon icon-facebook2"><use xlink:href="#icon-facebook2"></use></svg></a>
-      <a href="https://www.twitter.com/intent/tweet?text={{- description -}}&url={{- url -}}&hashtags={{- tags -}}" rel="noopener noreferrer"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
+      <a href="https://www.twitter.com/intent/tweet?text={{- description -}}%20{{- mentions -}}&url={{- url -}}&hashtags={{- tags -}}" rel="noopener noreferrer"><svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg></a>
       <a href="mailto:?subject={{- subject -}}&body={{- body -}}"><svg class="icon icon-envelop"><use xlink:href="#icon-envelop"></use></svg></a>
 
   {%- else -%}

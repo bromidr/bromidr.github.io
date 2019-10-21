@@ -15,13 +15,13 @@ layout: default
         {%- endif -%}
     </h1>
     <p class="description">{{- page.description | escape -}}</p>
-    <div class="hero">
-        {%- if "bible" == page.collection and "Person" == page.type -%}
-            {%- include genealogy.html -%}
-        {%- elsif page.image -%}
-            <img src="{{- page.image -}}" />
-        {%- endif -%}
-    </div>
   </header>
+  <div class="hero">
+      {%- if "bible" == page.collection and "Person" == page.type -%}
+          {%- include genealogy.html -%}
+      {%- elsif page.image -%}
+          <img src="{{- page.image -}}" />
+      {%- endif -%}
+  </div>
   {{- content -}}
 </section>
