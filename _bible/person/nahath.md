@@ -3,5 +3,5 @@ type: Person
 name: Nahath
 gender: Male
 parent: [Reuel]
-sibling: [Zerah, Shammah, Mizzah]
+sibling: [Zerah Son Of Reuel, Shammah, Mizzah]
 ---
