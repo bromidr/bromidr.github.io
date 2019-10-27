@@ -1,4 +1,5 @@
-@import "normalize";
+@import "sanitize";
+@import "typography";
 @import "variables";
 
 body {
@@ -25,6 +26,10 @@ body {
   @media #{$mq-xxlarge} {
     font-size: 1.625em;
   }
+}
+
+img {
+  max-width: 100%;
 }
 
 svg.icon {
@@ -68,6 +73,7 @@ main#pageTorso > aside#mainAside {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  z-index: 99; /* needed so that the aside is always shown above blockquotes */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -93,6 +99,7 @@ main#pageTorso > article#mainContent {
 
   header {
     h1, h3 {
+      margin: 0; /* remove default margin on these headers */
       padding-left: 1rem; /* ...this and... */
       padding-right: 1rem; /* ...this should match... */
       @media #{$mq-small} {
@@ -102,12 +109,6 @@ main#pageTorso > article#mainContent {
       span {
         color: #A9A9A9; /* dark gray */
         font-size: 0.5em;
-      }
-    }
-    p {
-      @media #{$mq-small} {
-        padding-left: 0; /* this @media small padding-left */
-        padding-right: 0; /* and right, respectively */
       }
     }
     time {
@@ -121,14 +122,42 @@ main#pageTorso > article#mainContent {
   }
 
   blockquote {
-    border-top: 1px solid #008080; /* teal */
-    border-bottom: 1px solid #008080; /* teal */
-    background-color: #F5F5F5; /* white smoke */
+    position: relative;
+    margin: 1rem 0; /* remove default left and right margins on blockquotes */
+    border-top: 1px solid #D3D3D3; /* border-top and bottom is needed so... */
+    border-bottom: 1px solid #D3D3D3; /* that there is margin around quote. */
+    &:before, &:after {
+      position: absolute;
+      top: -2.75rem;
+      font-size: 6rem;
+      font-family: Helvetica, Arial, sans-serif;
+      color: #008080; /* teal */
+    }
+    &:before {
+      content: "\201C"; /* left double quotation mark */
+      left: 0;
+    }
+    &:after {
+      content: "\201D"; /* right double quotation mark */
+      right: 0;
+    }
+    p {
+      cite {
+        color: #8B0000; /* dark red */
+        &:before {
+          content: "\2014\2009" /* emdash and thin space */
+        }
+      }
+    }
   }
 
   p {
     padding-left: 1rem; /* ...this... */
     padding-right: 1rem; /* ...and this, respectively */
+    @media #{$mq-small} {
+      padding-left: 0; /* this @media small padding-left */
+      padding-right: 0; /* and right, respectively */
+    }
     &.author {
       margin: 0;
       font-size: smaller;
@@ -148,7 +177,7 @@ main#pageTorso > article#mainContent {
     &.hero {
       border-top: 1px dotted #343434; /* jetblack */
       border-bottom: 1px dotted #343434; /* jetblack */
-      padding: 0.5rem 0;
+      margin: 1rem 0;
     }
   }
 }
