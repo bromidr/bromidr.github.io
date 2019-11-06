@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article id="mainContent">
+<article>
     <header>
         {%- for page_category in page.categories -%}
             {%- assign site_category = site.category | where: 'title', page_category | first  -%}
