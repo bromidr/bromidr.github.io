@@ -17,10 +17,8 @@ layout: default
     <p class="description">{{- page.description | escape -}}</p>
   </header>
   <div class="hero">
-      {%- if "bible" == page.collection and "Person" == page.type -%}
-          {%- include genealogy.html -%}
-      {%- elsif page.image -%}
-          <img src="{{- page.image -}}" />
+      {%- if page.hero -%}
+          {% include carousel.html items=page.hero %}
       {%- endif -%}
   </div>
   {{- content -}}

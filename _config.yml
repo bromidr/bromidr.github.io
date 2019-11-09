@@ -47,6 +47,15 @@ defaults:
       layout: "page"
   -
     scope:
+      path: "_bible/person"
+      type: "bible"
+    values:
+      layout: "page"
+      hero:
+        -
+          include: genealogy.html
+  -
+    scope:
       path: "_category"
       type: "category"
     values:

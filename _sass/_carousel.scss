@@ -1,0 +1,31 @@
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & > .items {
+    flex-grow: 1;
+    figure {
+      margin: 1rem 0;
+      &:not(.curr) {
+        display: none;
+      }
+      &:not(:only-of-type) {
+        border: 1px solid black;
+        padding: 1rem;
+      }
+      & > * {
+        width: 100%;
+      }
+      & > figcaption {
+        color: #A9A9A9;
+      }
+    }
+  }
+  & > .controls {
+    cursor: pointer;
+    &.prev, &.next {
+      padding: 0.5rem;
+      font-size: 2rem;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 <div id="cy" style="width: 100%; height: 100%;"></div>
 
-<script defer src="https://unpkg.com/cytoscape@3.8.5/dist/cytoscape.min.js"></script>
+<script defer src="https://unpkg.com/cytoscape@3.12.0/dist/cytoscape.min.js"></script>
 <script defer src="https://unpkg.com/webcola@3.4.0/WebCola/cola.min.js"></script>
 <script defer src="https://unpkg.com/cytoscape-cola@2.3.0/cytoscape-cola.js"></script>
 <script>
@@ -143,6 +143,11 @@
       autoungrabify: true,
       userPanningEnabled: false,
       userZoomingEnabled: false
+    });
+
+    cy.on("resize", function (event) {
+      cy.fit();
+      cy.center();
     });
 
     cy.on("tap", "node", function (event) {
