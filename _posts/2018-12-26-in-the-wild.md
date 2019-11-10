@@ -1,17 +1,19 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/52190615-19dbd000-280e-11e9-9fd5-2cbdfa92ed97.jpg
 categories: [Life]
 tags: [Empathy, Elites]
 description: >- # description must be indented because we are using block scalar
   Jesus had to be made like us (human) to understand the challenges we
   experience and empathize with our weaknesses whilst amidst challenges.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/52190615-19dbd000-280e-11e9-9fd5-2cbdfa92ed97.jpg
 ---
 
 > Who, being in very nature God, did not consider equality with God something to
 be used to his own advantage; rather, he made himself nothing by taking the very
 nature of a servant, being made in human likeness. And being found in appearance
 as a man, he humbled himself by becoming obedient to death---even death on a
-cross! (Philippians 2:6–8 NIV)
+cross! <cite>Philippians 2:6–8 NIV</cite>
 
 In the previous story it was mentioned that we sin when we do things that do not
 come from faith. And since we have all sinned, we are all guilty according to
@@ -58,7 +60,7 @@ man in human form; He also came to learn obedience.
 > In the days of his flesh, Jesus offered up prayers and supplications, with
 loud cries and tears, to him who was able to save him from death, and he was
 heard because of his reverence. Although he was a son, he learned obedience
-through what he suffered. (Hebrews 5:7–8 ESV)
+through what he suffered. <cite>Hebrews 5:7–8 ESV</cite>
 
 Although Jesus always did what His Father in Heaven told Him to do by faith, it
 does not mean that He always wanted to do what His Father in Heaven told Him to
@@ -120,12 +122,12 @@ Him and believe that He knows what is best for your life.
 > Therefore he had to be made like his brothers in every respect, so that he
 might become a merciful and faithful high priest in the service of God, to make
 propitiation for the sins of the people. For because he himself has suffered
-when tempted, he is able to help those who are being tempted. (Hebrews 2:17–18
-ESV)
+when tempted, he is able to help those who are being tempted. <cite>Hebrews
+2:17–18 ESV</cite>
 >
 For we do not have a high priest who is unable to empathize with our weaknesses,
 but we have one who has been tempted in every way, just as we are — yet he did
-not sin. (Hebrews 4:15 NIV)
+not sin. <cite>Hebrews 4:15 NIV</cite>
 
 Now, learning obedience through what He experienced is not the only reason that
 Jesus appeared as a man in human form. He also had to be made like His brothers

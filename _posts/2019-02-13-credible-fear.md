@@ -1,11 +1,13 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/53928036-af10f500-4056-11e9-9032-c6db26a5dd13.png
 categories: [World]
 tags: [American Dream, Credible Fear, Migrant Caravan]
 description: >- # description must be indented because we are using block scalar
   The Lord made people poor in their ability to attain the American Dream so
   that they would become rich in faith in the Lord instead of rich in faith in
   their own ability.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/53928036-af10f500-4056-11e9-9032-c6db26a5dd13.png
 ---
 
 As was mentioned in previous stories, the people of Israel during the days when
@@ -205,7 +207,7 @@ of distress and famine to a situation of success and abundance.
 
 > Listen, my dear brothers and sisters: Has not God chosen those who are poor in
 the eyes of the world to be rich in faith and to inherit the kingdom he promised
-those who love him? (James 2:5 NIV)
+those who love him? <cite>James 2:5 NIV</cite>
 
 You may wonder why the Lord allowed such a famine and oppression to happen in
 the first place. It is so that people would turn back to the Lord. That is what

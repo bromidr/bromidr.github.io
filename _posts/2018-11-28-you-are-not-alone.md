@@ -1,17 +1,19 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/51361906-88473100-1a9f-11e9-9cde-c1dc80544c5d.jpg
 categories: [Culture]
 tags: [Internet Culture, Social Media, Fake News]
 description: >- # description must be indented because we are using block scalar
   Although you may be imprisoned by the people of this world because of the
   false allegations made against you, the Lord shall set you free.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/51361906-88473100-1a9f-11e9-9cde-c1dc80544c5d.jpg
 ---
 
 > Now the chief priests and the whole Council kept trying to obtain false
 testimony against Jesus, so that they might put Him to death. They did not
 find any, even though many false witnesses came forward. But later on two
 came forward, and said, "This man stated, 'I am able to destroy the temple
-of God and to rebuild it in three days.'" (Matthew 26:59–61 NASB)
+of God and to rebuild it in three days.'" <cite>Matthew 26:59–61 NASB</cite>
 
 As mentioned in previous stories, anyone may accuse a person of certain things
 on the public forum of their choice. And sometimes the allegations that someone

@@ -1,11 +1,13 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/64930023-aca80880-d7fa-11e9-93b5-a961b2c2c8e8.png
 categories: [Culture]
 tags: [Instagram Life, Cancel Culture]
 description: >- # description must be indented because we are using block scalar
   God and His love for you is not fickle; it is unchanging. God and His love for
   you is not fleeting; it is unending. God and His love for you is not a
   function; it is unconditional.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/64930023-aca80880-d7fa-11e9-93b5-a961b2c2c8e8.png
 ---
 
 For those who use Twitter, you may notice that some members of Twitterati
@@ -104,7 +106,7 @@ to His forgiveness and love and acceptance of us. Instead, Jesus paid the price
 for our wrongs (sins) against God. We did not have to pay the price.
 
 > Although I have great boldness in Christ to command you to do what is right, I
-appeal to you, instead, on the basis of love. (Philemon 1:8-9 HCSB)
+appeal to you, instead, on the basis of love. <cite>Philemon 1:8-9 HCSB</cite>
 
 Apostle Paul could have commanded Philemon to do what is right; instead, he
 appealed to him on the basis of love. And now, I appeal to you, on the basis of

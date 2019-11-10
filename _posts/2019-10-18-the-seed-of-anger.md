@@ -1,11 +1,13 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/66965347-591e1a00-f047-11e9-8ce0-b4132b73ac6f.jpg
 categories: [Culture]
 tags: [Cancel Culture, Anger, Injustice, Love, Reconciliation]
 description: >- # description must be indented because we are using block scalar
   The seed of anger may be planted within us. And if we allow it to linger, it
   may grow and bear fruit in the process of time as it is being nurtured and
   cultivated within us.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/66965347-591e1a00-f047-11e9-8ce0-b4132b73ac6f.jpg
 ---
 
 > Be angry [at sin---at immorality, at injustice, at ungodly behavior], yet do
@@ -14,7 +16,7 @@ sun goes down.
 >
 And do not give the devil an opportunity [to lead you into sin by holding a
 grudge, or nurturing anger, or harboring resentment, or cultivating bitterness].
-(Ephesians 4:26-27 AMP)
+<cite>Ephesians 4:26-27 AMP</cite>
 
 As mentioned in the previous message, do not begrudge those who wronged you or
 did things that you do not agree with. While it is okay to be angry at sin (such
@@ -35,7 +37,7 @@ Cain became very angry and looked resentful.
 The Lord said to Cain, “Why are you angry, and why do you look so resentful? If
 you do the right thing, won’t you be accepted? But if you don’t do the right
 thing, sin will be waiting at the door ready to strike! It will entice you, but
-you must rule over it.” (Genesis 4:3-7 CEB)
+you must rule over it.” <cite>Genesis 4:3-7 CEB</cite>
 
 Cain and Abel were brothers. Cain was a farmer whilst Abel was a shepherd. Each
 had a different job as each had a different calling from the Lord and purpose in
@@ -138,7 +140,7 @@ Cain who canceled (as in, killed) Abel.
 
 > You have come to Jesus, the one who mediates the new covenant between God and
 people, and to the sprinkled blood, which speaks of forgiveness instead of
-crying out for vengeance like the blood of Abel. (Hebrews 12:24 NLT)
+crying out for vengeance like the blood of Abel. <cite>Hebrews 12:24 NLT</cite>
 
 Near the beginning of this post I rhetorically asked if it would be ironic if
 your anger at a person led you yourself to sin. The answer, of course, is yes.

@@ -1,11 +1,13 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/52758450-58277b00-2fd6-11e9-9432-c1867c6b87b4.jpg
 categories: [World]
 tags: [American Dream, Drain The Swamp, Inequality]
 description: >- # description must be indented because we are using block scalar
   The American Dream is based on relying on your ability and resourcefulness to
   overcome challenges. This self-reliance is incongruous with relying upon the
   Lord.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/52758450-58277b00-2fd6-11e9-9432-c1867c6b87b4.jpg
 ---
 
 In previous stories, the obstacles and difficulties that migrants experience as
@@ -157,7 +159,8 @@ history of getting you out of troubles of all sorts.
 "And now you say, 'No! We want a king; give us a king!'
 >
 "Well, if that's what you want, that's what you'll get! Present yourselves
-formally before God, ranked in tribes and families." (1 Samuel 10:17–19 MSG)
+formally before God, ranked in tribes and families." <cite>1 Samuel 10:17–19
+MSG</cite>
 
 The people of Israel think that their leaders do not fight for them. Instead,
 the people of Israel think that the leaders only fight for special interest

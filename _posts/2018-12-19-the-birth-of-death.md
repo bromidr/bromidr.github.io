@@ -1,17 +1,19 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/52007819-54a3d800-249d-11e9-8a3d-d912817e33a4.jpg
 categories: [Life]
 tags: [Life And Death]
 description: >- # description must be indented because we are using block scalar
   Eternal life is the Lord God's intent for all of us. His intent was derailed
   when death was birthed. However, the Lord made a way for you to realize His
   intent.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/52007819-54a3d800-249d-11e9-8a3d-d912817e33a4.jpg
 ---
 
 > For "everyone who calls on the name of the Lord will be saved." But how can
 they call on him to save them unless they believe in him? And how can they
 believe in him if they have never heard about him? And how can they hear about
-him unless someone tells them? (Romans 10:13–14 NLT)
+him unless someone tells them? <cite>Romans 10:13–14 NLT</cite>
 
 In the previous stories it was recommended that you cultivate a relationship
 with the Lord God. This suggestion also outlined some of the benefits that you
@@ -37,12 +39,13 @@ Lord to be saved. And now, to answer those considerations of yours, it is
 inevitable that I broach the subject of sin, so bear with me in this matter.
 
 > But whoever has doubts is condemned if they eat, because their eating is not
-from faith; and everything that does not come from faith is sin. (Romans 14:23
-NIV)
+from faith; and everything that does not come from faith is sin. <cite>Romans
+14:23 NIV</cite>
 >
 But if you have doubts about whether or not you should eat something, you are
 sinning if you go ahead and do it. For you are not following your convictions.
-If you do anything you believe is not right, you are sinning. (Romans 14:23 NLT)
+If you do anything you believe is not right, you are sinning. <cite>Romans 14:23
+NLT</cite>
 
 As it was mentioned in a previous story, Adam and Eve never ate from the tree of
 life because death was not a concern for them until they chose to eat the fruit
@@ -117,7 +120,7 @@ of the people of Israel.
 > Why, then, was the law given? It was given alongside the promise to show
 people their sins. But the law was designed to last only until the coming of the
 child who was promised. God gave his law through angels to Moses, who was the
-mediator between God and the people. (Galatians 3:19 NLT)
+mediator between God and the people. <cite>Galatians 3:19 NLT</cite>
 
 As it is mentioned in the Scriptures above, God gave His law through angels to
 Moses. This law is not referring to the law of sin and death that was broached
@@ -184,7 +187,8 @@ viewed as a Gentile.
 > Even Gentiles, who do not have God's written law, show that they know his law
 when they instinctively obey it, even without having heard it. They demonstrate
 that God's law is written in their hearts, for their own conscience and thoughts
-either accuse them or tell them they are doing right. (Romans 2:14–15 NLT)
+either accuse them or tell them they are doing right. <cite>Romans 2:14–15
+NLT</cite>
 
 The law is written in your hearts. And you demonstrate your knowledge of God's
 written law when you instinctively obey it, even without having heard it, for
@@ -226,12 +230,13 @@ something is faith in Jesus Christ.
 > This righteousness is given through faith in Jesus Christ to all who believe.
 There is no difference between Jew and Gentile, for all have sinned and fall
 short of the glory of God, and all are justified freely by his grace through the
-redemption that came by Christ Jesus. (Romans 3:22–24 NIV)
+redemption that came by Christ Jesus. <cite>Romans 3:22–24 NIV</cite>
 >
 Therefore there is now no condemnation [no guilty verdict, no punishment] for
 those who are in Christ Jesus [who believe in Him as personal Lord and Savior].
 For the law of the Spirit of life [which is] in Christ Jesus [the law of our new
-being] has set you free from the law of sin and of death. (Romans 8:1–2 AMP)
+being] has set you free from the law of sin and of death. <cite>Romans 8:1–2
+AMP</cite>
 
 Faith in Jesus Christ justifies all of us in the eyes of the God. And because
 this faith justifies us in His sight, we are freed from the consequence of the

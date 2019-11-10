@@ -1,10 +1,12 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/52389587-235d7600-2a62-11e9-8e0c-981506a52a89.jpg
 categories: [Life]
 tags: [Asylum]
 description: >- # description must be indented because we are using block scalar
   The doing of nothing may result in the harming and killing of life while the
   doing of something may result in good and the saving of life.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/52389587-235d7600-2a62-11e9-8e0c-981506a52a89.jpg
 ---
 
 > Again he entered the synagogue, and a man was there who had a withered hand.
@@ -13,8 +15,8 @@ they might accuse him. And he said to the man who had the withered hand, "Come
 here." And he said to them, "Is it lawful on the sabbath to do good or to do
 harm, to save life or to kill?" But they were silent. And he looked around at
 them with anger, grieved at their hardness of heart, and said to the man,
-"Stretch out your hand." He stretched it out, and his hand was restored. (Mark
-3:1–5 RSV)
+"Stretch out your hand." He stretched it out, and his hand was restored.
+<cite>Mark 3:1–5 RSV</cite>
 
 As it was mentioned in the previous message, there is a law that states that no
 one is to work on the Sabbath because it was designated by God as a day of rest.

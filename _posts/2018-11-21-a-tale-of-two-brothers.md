@@ -1,15 +1,17 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/51095356-34c4a280-1782-11e9-96d6-affcacc2dbf3.png
 categories: [Culture]
 tags: [Internet Culture, Social Media, Migrant Caravan]
 description: >- # description must be indented because we are using block scalar
   In this day and age, those who are publicly accused on a social media platform
   are imprisoned by the false allegations made against them.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/51095356-34c4a280-1782-11e9-96d6-affcacc2dbf3.png
 ---
 
 > Now Joseph had been taken to Egypt. An Egyptian named Potiphar, an officer of
 Pharaoh and the captain of the guard, bought him from the Ishmaelites who had
-brought him there. (Genesis 39:1 HCSB)
+brought him there. <cite>Genesis 39:1 HCSB</cite>
 
 Joseph was purchased by Potiphar, an Egyptian officer of Pharaoh and captain of
 the guard. And he became a servant in Potiphar's household. In other words,
@@ -30,8 +32,8 @@ person of certain actions.
 > So it was, when his master heard the words which his wife spoke to him,
 saying, "Your servant did to me after this manner," that his anger was aroused.
 Then Joseph's master took him and put him into the prison, a place where the
-king's prisoners were confined. And he was there in the prison. (Genesis
-39:19–20 NKJV)
+king's prisoners were confined. And he was there in the prison. <cite>Genesis
+39:19–20 NKJV</cite>
 
 As mentioned in the previous story, when you hear about the actions of a person
 from someone who chose to bring to light those actions of that person, you have
@@ -95,7 +97,7 @@ prefer to have your life and future derailed because of the false allegations
 that someone made against you.
 
 > But the Lord was with Joseph and showed him mercy, and He gave him favor in
-the sight of the keeper of the prison. (Genesis 39:21 NKJV)
+the sight of the keeper of the prison. <cite>Genesis 39:21 NKJV</cite>
 
 Now, although Joseph found himself isolated from society because of the false
 allegations that were made against him, he was not alone. The Lord was with him.
@@ -181,7 +183,7 @@ the terms and cost of their arrangement, he went into her.
 
 > About three months later Judah was told, "Your daughter-in-law Tamar is guilty
 of prostitution, and as a result she is now pregnant." Judah said, "Bring her
-out and have her burned to death!" (Genesis 38:24 NIV)
+out and have her burned to death!" <cite>Genesis 38:24 NIV</cite>
 
 When Tamar was found to be with child, she was accused of prostitution. Her
 father-in-law, Judah, heard the accusations that were made against her. Now, as
@@ -214,7 +216,7 @@ Judah found himself in such a situation.
 to whom these belong, I am with child." And she said, "Please determine whose
 these are---the signet and cord, and staff." So Judah acknowledged them and
 said, "She has been more righteous than I, because I did not give her to Shelah
-my son." And he never knew her again. (Genesis 38:25–26 NKJV)
+my son." And he never knew her again. <cite>Genesis 38:25–26 NKJV</cite>
 
 The signet and cord, and staff belongs to her father-in-law. Thus, Judah is the
 father of the child that Tamar is with. Upon seeing his signet and cord, and

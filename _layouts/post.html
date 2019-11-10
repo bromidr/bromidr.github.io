@@ -29,7 +29,9 @@ layout: default
         </p>
     </header>
     <div class="hero">
-        {%- if page.image -%}<img src="{{- page.image -}}" />{%- endif -%}
+        {%- if page.hero -%}
+            {% include carousel.html items=page.hero %}
+        {%- endif -%}
     </div>
     {{- content -}}
 </article>

@@ -71,7 +71,7 @@ main > section, main > article {
       cite {
         color: #8B0000; /* dark red */
         &:before {
-          content: "\2014\2009" /* emdash and thin space */
+          content: "\2014" /* emdash */
         }
       }
     }

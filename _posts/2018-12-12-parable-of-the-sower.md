@@ -1,17 +1,19 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/51641543-654fcd80-1f34-11e9-8c9e-1c3fca6d345b.jpg
 categories: [Life]
 tags: [Parables, Stages Of Faith, Idioms]
 description: >- # description must be indented because we are using block scalar
   Parables are like encrypted messages. Only those with the decryption key may
   understand the message. Jesus has given us the decryption key.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/51641543-654fcd80-1f34-11e9-8c9e-1c3fca6d345b.jpg
 ---
 
 > His disciples asked him what this parable meant.
 >
 He said, "The knowledge of the secrets of the kingdom of God has been given to
 you, but to others I speak in parables, so that, 'though seeing, they may not
-see; though hearing, they may not understand.'" (Luke 8:9–10 NIV)
+see; though hearing, they may not understand.'" <cite>Luke 8:9–10 NIV</cite>
 
 Parables, in this day and age, may be viewed as encrypted messages. Although
 they are encrypted, the messages are not private or inaccessible. Rather, the
@@ -38,7 +40,7 @@ the parable of the sower were left without understanding of its deeper meaning.
 
 > Now the parable is this: The seed is the word of God. Those by the wayside are
 the ones who hear; then the devil comes and takes away the word out of their
-hearts, lest they should believe and be saved. (Luke 8:11–12 NKJV)
+hearts, lest they should believe and be saved. <cite>Luke 8:11–12 NKJV</cite>
 
 As mentioned in the previous story, you may cultivate a relationship with the
 Lord God by regularly praying to and communing with Him. And through this
@@ -59,7 +61,7 @@ saved if we were to believe that we really heard the voice of the Lord God.
 
 > And the ones on the rock are those who, when they hear the word, receive it
 with joy. But these have no root; they believe for a while, and in time of
-testing fall away. (Luke 8:13 ESV)
+testing fall away. <cite>Luke 8:13 ESV</cite>
 
 As it was mentioned in the previous story, if the serpent is not successful in
 his attempts at getting you to doubt in your heart that the Lord God said what
@@ -79,7 +81,7 @@ from the Lord God as well as lose faith in Him and what He says to you.
 
 > As for what fell among the thorns, these are the ones who hear; but as they go
 on their way, they are choked by the cares and riches and pleasures of life, and
-their fruit does not mature. (Luke 8:14 NRSV)
+their fruit does not mature. <cite>Luke 8:14 NRSV</cite>
 
 As it was mentioned in the previous story, the serpent may also try to get you
 to pursue things which seems desirable and beneficial from your standpoint,
@@ -209,7 +211,7 @@ walk of faith in the Lord God: in the good ground.
 
 > But the seed in the good ground---these are the ones who, having heard the
 word with an honest and good heart, hold on to it and by enduring, bear fruit.
-(Luke 8:15 HCSB)
+<cite>Luke 8:15 HCSB</cite>
 
 Now, those who are in the good ground hears the word of God with an honest and
 good heart. And having heard the word of God, they hold onto it and bear fruit

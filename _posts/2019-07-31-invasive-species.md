@@ -1,11 +1,13 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/62260565-6597bc80-b3e0-11e9-883c-1763e4fbe297.jpg
 categories: [World]
 tags: [Immigrant Integration]
 description: >- # description must be indented because we are using block scalar
   Don't view immigrants as a drain on society. Rather, view them like how Daniel
   was viewed: as someone with the potential to integrate and become positive
   contributors in their new habitat.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/62260565-6597bc80-b3e0-11e9-883c-1763e4fbe297.jpg
 ---
 
 > Now in the second year of Nebuchadnezzar’s reign, Nebuchadnezzar had dreams;
@@ -22,7 +24,8 @@ The king answered and said to the Chaldeans, “My decision is firm: if you do n
 make known the dream to me, and its interpretation, you shall be cut in pieces,
 and your houses shall be made an ash heap. However, if you tell the dream and
 its interpretation, you shall receive from me gifts, rewards, and great honor.
-Therefore tell me the dream and its interpretation.” (Daniel 2:1-6 NKJV)
+Therefore tell me the dream and its interpretation.” <cite>Daniel 2:1-6
+NKJV</cite>
 
 Nebuchadnezzar, the king of Babylon, had dreams. Dreams that he did not
 understand the meaning of. I reckon that this is because he did not have a
@@ -51,13 +54,14 @@ what the dream meant. Then Daniel went home and told his friends Hananiah,
 Mishael, and Azariah what had happened. He urged them to ask the God of heaven
 to show them his mercy by telling them the secret, so they would not be executed
 along with the other wise men of Babylon. That night the secret was revealed to
-Daniel in a vision. Then Daniel praised the God of heaven. (Daniel 2:16-19 NLT)
+Daniel in a vision. Then Daniel praised the God of heaven. <cite>Daniel 2:16-19
+NLT</cite>
 >
 Then Daniel went in to see Arioch, whom the king had ordered to execute the wise
 men of Babylon. Daniel said to him, “Don’t kill the wise men. Take me to the
 king, and I will tell him the meaning of his dream.” Arioch quickly took Daniel
 to the king and said, “I have found one of the captives from Judah who will tell
-the king the meaning of his dream!” (Daniel 2:24-25 NLT)
+the king the meaning of his dream!” <cite>Daniel 2:24-25 NLT</cite>
 
 Nebuchadnezzar could not interpret the dream; nor could the magicians,
 astrologers, sorcerers, and Chaldeans. And because of this, Nebuchadnezzar

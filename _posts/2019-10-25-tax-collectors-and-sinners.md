@@ -1,10 +1,12 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/67540997-61b0c900-f6b5-11e9-8301-6b13b8dd0ef3.jpg
 categories: [Culture]
 tags: [Cancel Culture, Be Kind To One Another]
 description: >- # description must be indented because we are using block scalar
   Showing unconditional kindness to all has become a contemptible quality for a
   person to possess in this day and age.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/67540997-61b0c900-f6b5-11e9-8301-6b13b8dd0ef3.jpg
 ---
 
 Charlotte Jones, the daughter of the owner of the Dallas Cowboys, invited day

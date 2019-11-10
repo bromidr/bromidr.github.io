@@ -1,15 +1,17 @@
 ---
-image: https://user-images.githubusercontent.com/45976390/52542537-b81be880-2d6e-11e9-8650-c48e6b1cbb5e.jpg
 categories: [World]
 tags: [Refuge]
 description: >- # description must be indented because we are using block scalar
   There are many whom God plans to use mightily. But they are currently lost and
   astray. They just need some help to get back on track.
+hero:
+  -
+    image: https://user-images.githubusercontent.com/45976390/52542537-b81be880-2d6e-11e9-8650-c48e6b1cbb5e.jpg
 ---
 
 > The following night, the Lord stood by him and said, "Have courage! For as you
-have testified about Me in Jerusalem, so you must also testify in Rome." (Acts
-23:11 HCSB)
+have testified about Me in Jerusalem, so you must also testify in Rome."
+<cite>Acts 23:11 HCSB</cite>
 
 As mentioned in the previous story, each and every one of us are on a journey in
 this life. The certain man was on a journey from Jerusalem to Jericho. And the
@@ -52,7 +54,7 @@ prisoner for his beliefs.
 
 > When it was decided that we would sail for Italy, Paul and some other
 prisoners were handed over to a centurion named Julius, who belonged to the
-Imperial Regiment. (Acts 27:1 NIV)
+Imperial Regiment. <cite>Acts 27:1 NIV</cite>
 
 At some point in time, it was decided that Apostle Paul should sail to Italy.
 Therefore, he and other prisoners were handed over to a centurion named Julius.
@@ -106,7 +108,7 @@ fulfilled.
 
 > Once ashore, we then learned that the island was called Malta. The local
 people showed us extraordinary kindness, for they lit a fire and took us all in,
-since it was raining and cold. (Acts 28:1–2 HCSB)
+since it was raining and cold. <cite>Acts 28:1–2 HCSB</cite>
 
 The ship that Apostle Paul and other prisoners, sailors, centurion, and soldiers
 were on ran aground on a certain island. Once they were ashore, they learned
@@ -163,7 +165,7 @@ whilst expecting nothing in return. And so, do likewise.)
 
 > It was three months after the shipwreck that we set sail on another ship that
 had wintered at the island---an Alexandrian ship with the twin gods as its
-figurehead. (Acts 28:11 NLT)
+figurehead. <cite>Acts 28:11 NLT</cite>
 
 Three months after getting lost and going astray from their destination because
 of the obstacles and difficulties that they experienced, those who were on the
