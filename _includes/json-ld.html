@@ -1,0 +1,64 @@
+<script type="application/ld+json">{
+{%- if "posts" == page.collection -%}
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "{{- page.categories | join: "," -}}",
+    "wordCount": {{- page.content | number_of_words -}},
+    "author": [
+        {%- assign first = true -%}
+        {%- for page_author in page.authors -%}
+            {%- assign site_author = site.author | where: "title", page_author | first -%}
+            {%- if site_author -%}
+                {% unless first %},{% endunless %}
+                {
+                  "@type": "Person",
+                  "name": "{{- site_author.name | default: site_author.title | escape -}}",
+                  "url": "{{- site_author.url | absolute_url -}}"
+                }
+                {%- assign first = false -%}
+            {%- endif -%}
+        {%- endfor -%}
+    ],
+    "creator": [
+        {%- assign first = true -%}
+        {%- for page_author in page.authors -%}
+            {%- assign site_author = site.author | where: "title", page_author | first -%}
+            {%- if site_author -%}
+                {% unless first %},{% endunless %}
+                {
+                  "@type": "Person",
+                  "name": "{{- site_author.name | default: site_author.title | escape -}}",
+                  "url": "{{- site_author.url | absolute_url -}}"
+                }
+                {%- assign first = false -%}
+            {%- endif -%}
+        {%- endfor -%}
+    ],
+    "dateCreated": "{{- page.date | date: "%Y-%m-%d" -}}",
+    "dateModified": "{{- page.date | date: "%Y-%m-%d" -}}",
+    "datePublished": "{{- page.date | date: "%Y-%m-%d" -}}",
+    "headline": "{{- page.title -}}",
+    "inLanguage": "EN",
+    "keywords": "{{- page.tags | join: "," -}}",
+    "publisher": {
+      "@type": "Organization",
+      "email": "{{- site.email -}}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{- site.logo -}}"
+      },
+      "name": "{{- site.title -}}",
+      "url": "{{- site.url -}}"
+    },
+    "description": "{{- page.description -}}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{- page.hero | map: 'image' | first | default: site.logo -}}"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "url": "{{- page.url | absolute_url -}}"
+    },
+    "url": "{{- page.url | absolute_url -}}"
+{%- endif -%}
+}</script>
