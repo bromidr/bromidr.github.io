@@ -14,20 +14,17 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: bromidr
-logo: https://www.github.com/bromidr.png
+title: Orchard
+logo: https://www.github.com/orchardcc.png
 description: >- # this means to ignore newlines until "baseurl:"
   A way to share the Word of God to those who happen upon this place
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://bromidr.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://orchard.cc" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: /:categories/:year-:month-:day-:title
 
 # Social settings
-repository: bromidr/bromidr.github.io
-facebook: bromidr
-instagram: bromidr
-twitter: bromidr
-email: info@bromidr.com
+repository: orchardcc/orchardcc.github.io
+email: info@orchard.cc
 
 # Collections and default settings
 collections:
