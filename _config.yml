@@ -75,7 +75,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      authors: [Bromide Roach]
+      authors: [Orchard]
 
 # Build settings
 markdown: kramdown
