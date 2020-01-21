@@ -48,9 +48,7 @@ defaults:
       type: "bible"
     values:
       layout: "page"
-      hero:
-        -
-          include: genealogy.html
+      include: genealogy.html
   -
     scope:
       path: "_category"

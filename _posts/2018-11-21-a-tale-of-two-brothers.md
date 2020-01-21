@@ -4,9 +4,7 @@ tags: [Internet Culture, Social Media, Migrant Caravan]
 description: >- # description must be indented because we are using block scalar
   In this day and age, those who are publicly accused on a social media platform
   are imprisoned by the false allegations made against them.
-hero:
-  -
-    image: https://user-images.githubusercontent.com/45976390/51095356-34c4a280-1782-11e9-96d6-affcacc2dbf3.png
+image: https://user-images.githubusercontent.com/45976390/51095356-34c4a280-1782-11e9-96d6-affcacc2dbf3.png
 ---
 
 > Now Joseph had been taken to Egypt. An Egyptian named Potiphar, an officer of

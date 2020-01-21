@@ -4,9 +4,7 @@ tags: [Asylum]
 description: >- # description must be indented because we are using block scalar
   The doing of nothing may result in the harming and killing of life while the
   doing of something may result in good and the saving of life.
-hero:
-  -
-    image: https://user-images.githubusercontent.com/45976390/52389587-235d7600-2a62-11e9-8e0c-981506a52a89.jpg
+image: https://user-images.githubusercontent.com/45976390/52389587-235d7600-2a62-11e9-8e0c-981506a52a89.jpg
 ---
 
 > Again he entered the synagogue, and a man was there who had a withered hand.

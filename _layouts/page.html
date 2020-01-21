@@ -17,9 +17,11 @@ layout: default
     <p class="description">{{- page.description | escape -}}</p>
   </header>
   <div class="hero">
-      {%- if page.hero -%}
-          {% include carousel.html items=page.hero %}
-      {%- endif -%}
+    {%- if page.include -%}
+      {%- include {{page.include}} -%}
+    {%- elsif page.image -%}
+      <img src="{{- page.image -}}" />
+    {%- endif -%}
   </div>
   {{- content -}}
 </section>

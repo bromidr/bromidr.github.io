@@ -4,9 +4,7 @@ tags: [Relationship, Life And Death, Trojan Horse]
 description: >- # description must be indented because we are using block scalar
   When you cultivate a relationship with the Lord God, He may forewarn you when
   something will result in the death of any aspect of your life.
-hero:
-  -
-    image: https://user-images.githubusercontent.com/45976390/51361957-b75da280-1a9f-11e9-8bde-704a26cc0d29.jpg
+image: https://user-images.githubusercontent.com/45976390/51361957-b75da280-1a9f-11e9-8bde-704a26cc0d29.jpg
 ---
 
 > Now the serpent was more crafty than any of the wild animals the Lord God had

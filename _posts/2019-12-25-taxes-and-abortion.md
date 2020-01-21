@@ -5,9 +5,7 @@ description: >- # description must be indented because we are using block scalar
   The Lord has a higher purpose for your life than to live for the benefit of
   yourself. And that is to be a blessing to people within the community, city,
   province/state, and country that you live in.
-hero:
-  -
-    image: https://user-images.githubusercontent.com/45976390/71432087-dea3f300-26a4-11ea-8fc1-ada5ebbe4e29.jpg
+image: https://user-images.githubusercontent.com/45976390/71432087-dea3f300-26a4-11ea-8fc1-ada5ebbe4e29.jpg
 ---
 
 The Left---liberals, democrats, and their equivalent around the world---advocate

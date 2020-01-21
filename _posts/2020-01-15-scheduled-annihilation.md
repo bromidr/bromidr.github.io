@@ -5,9 +5,7 @@ description: >- # description must be indented because we are using block scalar
   Believers in Jesus have secured a spot in the Kingdom of Heaven for a reason:
   so that you may try and help others to safety through preaching Jesus to those
   who do not yet believe in Him.
-hero:
-  -
-    image: https://user-images.githubusercontent.com/45976390/72377124-2b478080-36dd-11ea-9ad3-42c27aaeb44a.jpg
+image: https://user-images.githubusercontent.com/45976390/72377124-2b478080-36dd-11ea-9ad3-42c27aaeb44a.jpg
 ---
 
 > Then Esther sent this reply to Mordecai: “Go, gather together all the Jews who

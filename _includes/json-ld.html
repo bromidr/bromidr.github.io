@@ -53,7 +53,7 @@
     "description": "{{- page.description -}}",
     "image": {
       "@type": "ImageObject",
-      "url": "{{- page.hero | map: 'image' | first | default: site.logo -}}"
+      "url": "{{- page.image | default: site.logo -}}"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",

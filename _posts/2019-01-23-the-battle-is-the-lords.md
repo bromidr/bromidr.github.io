@@ -5,9 +5,7 @@ description: >- # description must be indented because we are using block scalar
   The Lord let the American Dream become elusive so that you would turn back to
   Him and give Him a chance to show that He is willing and able to fight for and
   save you.
-hero:
-  -
-    image: https://user-images.githubusercontent.com/45976390/53145591-bfad6f80-356e-11e9-813e-fda05dcf15a6.jpg
+image: https://user-images.githubusercontent.com/45976390/53145591-bfad6f80-356e-11e9-813e-fda05dcf15a6.jpg
 ---
 
 As it was mentioned in the previous story, the people of Israel wanted change.

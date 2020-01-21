@@ -5,9 +5,7 @@ description: >- # description must be indented because we are using block scalar
   Don't view immigrants as a drain on society. Rather, view them like how Daniel
   was viewed: as someone with the potential to integrate and become positive
   contributors in their new habitat.
-hero:
-  -
-    image: https://user-images.githubusercontent.com/45976390/62260565-6597bc80-b3e0-11e9-883c-1763e4fbe297.jpg
+image: https://user-images.githubusercontent.com/45976390/62260565-6597bc80-b3e0-11e9-883c-1763e4fbe297.jpg
 ---
 
 > Now in the second year of Nebuchadnezzar’s reign, Nebuchadnezzar had dreams;

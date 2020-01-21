@@ -4,9 +4,7 @@ tags: [Internet Culture, Social Media, Fake News]
 description: >- # description must be indented because we are using block scalar
   Although you may be imprisoned by the people of this world because of the
   false allegations made against you, the Lord shall set you free.
-hero:
-  -
-    image: https://user-images.githubusercontent.com/45976390/51361906-88473100-1a9f-11e9-9cde-c1dc80544c5d.jpg
+image: https://user-images.githubusercontent.com/45976390/51361906-88473100-1a9f-11e9-9cde-c1dc80544c5d.jpg
 ---
 
 > Now the chief priests and the whole Council kept trying to obtain false

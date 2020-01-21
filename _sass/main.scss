@@ -12,4 +12,4 @@ $mq-large: "(min-width: #{$bp-large})";
 $mq-xlarge: "(min-width: #{$bp-xlarge})";
 $mq-xxlarge: "(min-width: #{$bp-xxlarge})";
 
-@import "sanitize", "typography", "layout", "content", "carousel";
+@import "sanitize", "typography", "layout", "content";

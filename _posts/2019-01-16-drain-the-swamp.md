@@ -5,9 +5,7 @@ description: >- # description must be indented because we are using block scalar
   The American Dream is based on relying on your ability and resourcefulness to
   overcome challenges. This self-reliance is incongruous with relying upon the
   Lord.
-hero:
-  -
-    image: https://user-images.githubusercontent.com/45976390/52758450-58277b00-2fd6-11e9-9432-c1867c6b87b4.jpg
+image: https://user-images.githubusercontent.com/45976390/52758450-58277b00-2fd6-11e9-9432-c1867c6b87b4.jpg
 ---
 
 In previous stories, the obstacles and difficulties that migrants experience as
