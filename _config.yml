@@ -1,40 +1,26 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server
-# process.
-
 # Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+logo:
 title: Orchard
-logo: https://www.github.com/orchardcc.png
-description: >- # this means to ignore newlines until "baseurl:"
-  A way to share the Word of God to those who happen upon this place
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://orchard.cc" # the base hostname & protocol for your site, e.g. http://example.com
-permalink: /:categories/:year-:month-:day-:title
+alternateTitle:
+description: >- # this means to ignore newlines until "image"
+  A way to share the Word of God to those who happen upon this place.
+image: 
+repository: orchardcc/orchardcc.github.io
 
 # Social settings
-repository: orchardcc/orchardcc.github.io
-email: info@orchard.cc
+email: email@orchard.cc
+facebook:
+twitter:
 
-# Collections and default settings
+# Jekyll settings
+permalink: /:categories/:year/:month/:day/:title
+
+# Collections settings
 collections:
   bible:
     output: true
-  category:
-    output: true
-  author:
-    output: true
 
+# Front matter default settings
 defaults:
   -
     scope:
@@ -49,34 +35,10 @@ defaults:
     values:
       layout: "page"
       include: genealogy.html
-  -
-    scope:
-      path: "_category"
-      type: "category"
-    values:
-      layout: "archive"
-  -
-    scope:
-      path: "_author"
-      type: "author"
-    values:
-      layout: "archive"
-  -
-    scope:
-      path: "pages"
-      type: "pages"
-    values:
-      layout: "page"
-  -
-    scope:
-      path: "_posts"
-      type: "posts"
-    values:
-      layout: "post"
-      authors: [Orchard]
 
 # Build settings
 markdown: kramdown
 plugins:
-  - jekyll-feed
-  - jekyll-sitemap
+  - jekyll-github-metadata
+  - jekyll-remote-theme
+remote_theme: orchardcc/jekyll-theme-orchard
