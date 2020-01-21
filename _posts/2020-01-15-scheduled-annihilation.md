@@ -187,6 +187,13 @@ because Jesus chose to live for a higher purpose, he was able to save a
 multitude who were destined for eternal destruction. And that is because, like
 Esther, Jesus was willing to die in order to save us.
 
+The kingdom that was offered to Esther and Jesus could be considered as a
+temptation that is made available to them. And if accepted, said temptation will
+distract them from focusing on their purpose. Likewise, we can be tempted by
+things of this world that may cause us to become distracted from focusing on our
+purpose. However, like Esther and Jesus, we ought not succumb to such temptation
+and distractions. Instead, we ought to keep focused on our purpose in life.
+
 One last thing. In [another message][2], shared previously, it was mentioned
 that people of this world do not think that it is a good idea to associate with
 or befriend those whom they view as wicked. And the example used in the previous
