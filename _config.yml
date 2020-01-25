@@ -4,7 +4,7 @@ title: Orchard
 alternateTitle:
 description: >- # this means to ignore newlines until "image"
   A way to share the Word of God to those who happen upon this place.
-image: 
+image:
 repository: orchardcc/orchardcc.github.io
 
 # Social settings
@@ -14,6 +14,11 @@ twitter:
 
 # Jekyll settings
 permalink: /:categories/:year/:month/:day/:title
+
+# Pagination settings
+pagination:
+  items: 5
+  links: 5
 
 # Collections settings
 collections:
