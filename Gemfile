@@ -4,7 +4,7 @@ gem "github-pages", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem "jekyll-github-metadata", "~> 2.12"
+  gem "jekyll-github-metadata", "~> 2.13"
   gem "jekyll-remote-theme", "~> 0.4"
 end
 
