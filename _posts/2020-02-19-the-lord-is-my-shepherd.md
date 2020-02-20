@@ -177,7 +177,9 @@ died because of their action, the Lord is willing to conceive new friends for
 them. And If their church died because of their action, then the Lord is willing
 to conceive a new church for them. Thus, if you currently find that some aspects
 of your life are dead because you chose to follow the lead of your own desire,
-then you too may have a new beginning in life by choosing to instead follow the
-lead / guidance of the Lord. Just believe. And let the Lord be your Shepherd.
+then you too may have a new life by choosing to instead follow the lead/guidance
+of the Lord. A life wherein all of your needs are met such that you shall not
+lack anything in any aspect of your life. Just believe. And let the Lord be your
+Shepherd.
 
 God bless.
