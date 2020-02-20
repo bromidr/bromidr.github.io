@@ -13,7 +13,7 @@ facebook:
 twitter:
 
 # Jekyll settings
-permalink: /:categories/:year/:month/:day/:title
+permalink: /:collection/:categories/:year/:month/:day/:title
 
 # Pagination settings
 pagination:
