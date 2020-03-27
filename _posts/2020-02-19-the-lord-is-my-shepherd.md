@@ -37,8 +37,8 @@ says: Even though I walk through the valley of the shadow of death, I fear no
 evil, for You are with me; Your rod and Your staff, they comfort me (Psalm 23:4
 NASB). In his journey in life, King David walked through the valley of the
 shadow of death. Or, in other words, King David experienced challenges and
-difficulties in his journey in life. But, as mentioned in previous messages, the
-Lord is always with you. And the Lord is there for you in the midst of the
+difficulties in his journey in life. But, as mentioned in [previous message][1], 
+the Lord is always with you. And the Lord is there for you in the midst of the
 challenges or difficulties that you are facing. The Lord is there to meet your
 needs whilst amidst your challenges or difficulties. The Lord gives you peace so
 that you do not fear. The Lord gives you comfort so that you are not overcome
@@ -71,7 +71,7 @@ the wife of a man named Uriah. Undeterred, she sent messengers to bring her to
 him so that he may lay with her. This unbalanced power dynamic between the man
 (David) and the woman (Bathsheba) may be familiar to those who have had similar
 experiences or read similar stories in this day and age. Experiences and stories
-that birthed the #MeToo movement. However, as mentioned in previous the posts,
+that birthed the #MeToo movement. However, as mentioned in [previous posts][2],
 while the Lord will always love you, He may not agree with your action. The Lord
 also did not agree with David's actions, as you will see later. King David's
 action resulted in Bathsheba becoming pregnant. When he found out that she was
@@ -97,10 +97,10 @@ rather, He leads you in the paths of righteousness For His name’s sake (Psalm
 23:3 NKJV).
 
 In this way, David is not too different from Adam and Eve. As mentioned in a
-previous post, Adam and Eve worked in the garden of Eden; they were allowed to
-eat of the fruit of every tree in the garden of Eden except for the fruit from
-the tree of the knowledge of good and evil. One day, they were enticed to eat
-fruit from that tree. The woman saw that the tree had fruit that was good to
+[previous post][3], Adam and Eve worked in the garden of Eden; they were allowed 
+to eat of the fruit of every tree in the garden of Eden except for the fruit 
+from the tree of the knowledge of good and evil. One day, they were enticed to 
+eat fruit from that tree. The woman saw that the tree had fruit that was good to
 eat, nice to look at, and desirable for making someone wise. So she took some of
 the fruit and ate it. She also gave some to her husband, who was with her, and
 he ate it (Genesis 3:6 GW). The woman desired the fruit of the tree. Therefore,
@@ -183,3 +183,7 @@ lack anything in any aspect of your life. Just believe. And let the Lord be your
 Shepherd.
 
 God bless.
+
+[1]: {% link _posts/2018-11-28-you-are-not-alone.md %}
+[2]: {% link _posts/2019-09-25-retweets-do-not-imply-endorsement.md %}
+[3]: {% link _posts/2018-12-05-did-god-really-say.md %}
