@@ -6,7 +6,8 @@ description: >- # description must be indented because we are using block scalar
   If the Lord is not your Shepherd, then something else is your shepherd. If the
   Lord is not the One who leads and guides your life, then it is something else
   who leads and guides your life.
-image: https://user-images.githubusercontent.com/45976390/74894523-3b4a2400-535d-11ea-982c-65db27cbb8ee.jpg
+image:
+  path: https://user-images.githubusercontent.com/45976390/74894523-3b4a2400-535d-11ea-982c-65db27cbb8ee.jpg
 ---
 
 >
@@ -37,7 +38,7 @@ says: Even though I walk through the valley of the shadow of death, I fear no
 evil, for You are with me; Your rod and Your staff, they comfort me (Psalm 23:4
 NASB). In his journey in life, King David walked through the valley of the
 shadow of death. Or, in other words, King David experienced challenges and
-difficulties in his journey in life. But, as mentioned in [previous message][1], 
+difficulties in his journey in life. But, as mentioned in [previous message][1],
 the Lord is always with you. And the Lord is there for you in the midst of the
 challenges or difficulties that you are facing. The Lord is there to meet your
 needs whilst amidst your challenges or difficulties. The Lord gives you peace so
@@ -97,9 +98,9 @@ rather, He leads you in the paths of righteousness For His name’s sake (Psalm
 23:3 NKJV).
 
 In this way, David is not too different from Adam and Eve. As mentioned in a
-[previous post][3], Adam and Eve worked in the garden of Eden; they were allowed 
-to eat of the fruit of every tree in the garden of Eden except for the fruit 
-from the tree of the knowledge of good and evil. One day, they were enticed to 
+[previous post][3], Adam and Eve worked in the garden of Eden; they were allowed
+to eat of the fruit of every tree in the garden of Eden except for the fruit
+from the tree of the knowledge of good and evil. One day, they were enticed to
 eat fruit from that tree. The woman saw that the tree had fruit that was good to
 eat, nice to look at, and desirable for making someone wise. So she took some of
 the fruit and ate it. She also gave some to her husband, who was with her, and

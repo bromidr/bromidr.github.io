@@ -3,7 +3,8 @@ categories: [Life]
 description: >- # description must be indented because we are using block scalar
   Doing wrong does not disqualify you from having a future and purpose in life
   in the eyes of the Lord.
-image: https://user-images.githubusercontent.com/45976390/71051414-404ce600-2116-11ea-9731-3dc98f015642.jpg
+image:
+  path: https://user-images.githubusercontent.com/45976390/71051414-404ce600-2116-11ea-9731-3dc98f015642.jpg
 ---
 
 > Esau held a grudge against Jacob because of the blessing his father had given

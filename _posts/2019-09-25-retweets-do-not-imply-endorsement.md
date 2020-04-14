@@ -5,7 +5,8 @@ description: >- # description must be indented because we are using block scalar
   God and His love for you is not fickle; it is unchanging. God and His love for
   you is not fleeting; it is unending. God and His love for you is not a
   function; it is unconditional.
-image: https://user-images.githubusercontent.com/45976390/64930023-aca80880-d7fa-11e9-93b5-a961b2c2c8e8.png
+image:
+  path: https://user-images.githubusercontent.com/45976390/64930023-aca80880-d7fa-11e9-93b5-a961b2c2c8e8.png
 ---
 
 For those who use Twitter, you may notice that some members of Twitterati

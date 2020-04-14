@@ -3,7 +3,8 @@ categories: [Culture]
 description: >- # description must be indented because we are using block scalar
   You may have no sympathy for the people whom you view as wicked, but the Lord
   certainly does. The Lord cares about the wicked.
-image: https://user-images.githubusercontent.com/45976390/68263533-40849c80-0014-11ea-8a43-b1a63bd70690.jpg
+image:
+  path: https://user-images.githubusercontent.com/45976390/68263533-40849c80-0014-11ea-8a43-b1a63bd70690.jpg
 ---
 
 > The Lord gave this message to Jonah son of Amittai: “Get up and go to the

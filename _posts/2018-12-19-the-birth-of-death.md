@@ -5,7 +5,8 @@ description: >- # description must be indented because we are using block scalar
   Eternal life is the Lord God's intent for all of us. His intent was derailed
   when death was birthed. However, the Lord made a way for you to realize His
   intent.
-image: https://user-images.githubusercontent.com/45976390/52007819-54a3d800-249d-11e9-8a3d-d912817e33a4.jpg
+image:
+  path: https://user-images.githubusercontent.com/45976390/52007819-54a3d800-249d-11e9-8a3d-d912817e33a4.jpg
 ---
 
 > For "everyone who calls on the name of the Lord will be saved." But how can

@@ -5,7 +5,8 @@ description: >- # description must be indented because we are using block scalar
   The seed of anger may be planted within us. And if we allow it to linger, it
   may grow and bear fruit in the process of time as it is being nurtured and
   cultivated within us.
-image: https://user-images.githubusercontent.com/45976390/66965347-591e1a00-f047-11e9-8ce0-b4132b73ac6f.jpg
+image:
+  path: https://user-images.githubusercontent.com/45976390/66965347-591e1a00-f047-11e9-8ce0-b4132b73ac6f.jpg
 ---
 
 > Be angry [at sin---at immorality, at injustice, at ungodly behavior], yet do

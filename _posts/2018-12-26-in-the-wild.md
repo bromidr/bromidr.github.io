@@ -4,7 +4,8 @@ tags: [Empathy, Elites]
 description: >- # description must be indented because we are using block scalar
   Jesus had to be made like us (human) to understand the challenges we
   experience and empathize with our weaknesses whilst amidst challenges.
-image: https://user-images.githubusercontent.com/45976390/52190615-19dbd000-280e-11e9-9fd5-2cbdfa92ed97.jpg
+image:
+  path: https://user-images.githubusercontent.com/45976390/52190615-19dbd000-280e-11e9-9fd5-2cbdfa92ed97.jpg
 ---
 
 > Who, being in very nature God, did not consider equality with God something to

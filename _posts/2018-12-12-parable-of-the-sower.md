@@ -4,7 +4,8 @@ tags: [Parables, Stages Of Faith, Idioms]
 description: >- # description must be indented because we are using block scalar
   Parables are like encrypted messages. Only those with the decryption key may
   understand the message. Jesus has given us the decryption key.
-image: https://user-images.githubusercontent.com/45976390/51641543-654fcd80-1f34-11e9-8c9e-1c3fca6d345b.jpg
+image:
+  path: https://user-images.githubusercontent.com/45976390/51641543-654fcd80-1f34-11e9-8c9e-1c3fca6d345b.jpg
 ---
 
 > His disciples asked him what this parable meant.

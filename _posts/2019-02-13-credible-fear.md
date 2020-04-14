@@ -5,7 +5,8 @@ description: >- # description must be indented because we are using block scalar
   The Lord made people poor in their ability to attain the American Dream so
   that they would become rich in faith in the Lord instead of rich in faith in
   their own ability.
-image: https://user-images.githubusercontent.com/45976390/53928036-af10f500-4056-11e9-9032-c6db26a5dd13.png
+image:
+  path: https://user-images.githubusercontent.com/45976390/53928036-af10f500-4056-11e9-9032-c6db26a5dd13.png
 ---
 
 As was mentioned in previous stories, the people of Israel during the days when

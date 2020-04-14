@@ -4,7 +4,8 @@ tags: [Refuge]
 description: >- # description must be indented because we are using block scalar
   There are many whom God plans to use mightily. But they are currently lost and
   astray. They just need some help to get back on track.
-image: https://user-images.githubusercontent.com/45976390/52542537-b81be880-2d6e-11e9-8650-c48e6b1cbb5e.jpg
+image:
+  path: https://user-images.githubusercontent.com/45976390/52542537-b81be880-2d6e-11e9-8650-c48e6b1cbb5e.jpg
 ---
 
 > The following night, the Lord stood by him and said, "Have courage! For as you
