@@ -5,7 +5,7 @@ alternateTitle:
 description: >- # this means to ignore newlines until "image"
   A way to share the Word of God to those who happen upon this place.
 image:
-repository: orchardcc/orchardcc.github.io
+repository: orchardcc/orchard.cc
 
 # Social settings
 email: email@orchard.cc
