@@ -15,7 +15,8 @@ echo "...done. Building site using Jekyll..."
 JEKYLL_SITE_DEST="./_site"
 
 # Build the Jekyll site
-JEKYLL_ENV=production bundle exec jekyll build --destination ${JEKYLL_SITE_DEST}
+JEKYLL_ENV=production JEKYLL_GITHUB_TOKEN=${GITHUB_TOKEN} \
+bundle exec jekyll build --destination ${JEKYLL_SITE_DEST}
 
 echo "...done. Priming site for deployment..."
 
