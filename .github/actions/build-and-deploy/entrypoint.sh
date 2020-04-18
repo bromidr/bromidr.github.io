@@ -12,7 +12,7 @@ echo "...done. Building site using Jekyll..."
 
 # Defines the directory where Jekyll shall write
 # the files it generates when it builds the site
-JEKYLL_SITE_DEST = "./_site"
+JEKYLL_SITE_DEST="./_site"
 
 # Build the Jekyll site
 JEKYLL_ENV=production bundle exec jekyll build --destination ${JEKYLL_SITE_DEST}
@@ -32,8 +32,8 @@ rm -f README.md
 
 # Define the remote git repository and branch where
 # we will be deploying the Jekyll-generated site to
-REMOTE_REPO = "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-REMOTE_BRANCH = "gh-pages"
+REMOTE_REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+REMOTE_BRANCH="gh-pages"
 
 echo "...done. Deploying site to ${REMOTE_BRANCH} branch of ${GITHUB_REPOSITORY} repository..."
 
