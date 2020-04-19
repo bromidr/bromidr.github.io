@@ -1,1 +1,1 @@
-![](https://github.com/orchardcc/orchard.cc/workflows/.github/workflows/build-and-deploy.yml/badge.svg)
+![](https://github.com/orchardcc/orchard.cc/workflows/Build%20and%20Deploy/badge.svg)

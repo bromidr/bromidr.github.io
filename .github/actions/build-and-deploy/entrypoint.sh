@@ -21,7 +21,7 @@ JEKYLL_SITE_DEST="./_site"
 # set JEKYLL_GITHUB_TOKEN for it to get your github data
 # @see: https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md
 JEKYLL_ENV=production JEKYLL_GITHUB_TOKEN=${GITHUB_TOKEN} \
-bundle exec jekyll build --destination ${JEKYLL_SITE_DEST}
+bundle exec jekyll build --destination ${JEKYLL_SITE_DEST} --trace --verbose
 
 echo "Site built. Priming site for deployment..."
 
@@ -61,9 +61,10 @@ git commit \
 # Push the commit to the gh-pages branch of the remote repository
 git push --force ${REMOTE_REPO} ${GITHUB_REF}:${REMOTE_BRANCH}
 
+echo "Site deployed. Removing files generated whilst building and deploying site..."
+
 # Presumably, these commands are unnecessary. Presumably, the virtual machine
 # used to run the GitHub Actions workflow is destroyed once the jobs are done
-echo "Site deployed. Removing files generated whilst building and deploying site..."
 rm -rf .git
 cd ..
 bundle exec jekyll clean

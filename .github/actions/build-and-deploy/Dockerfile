@@ -1,6 +1,8 @@
 # Container image that runs your code
 FROM ruby:2.6.6
 
+RUN gem install bundler
+
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
 
