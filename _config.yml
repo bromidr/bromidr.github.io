@@ -12,13 +12,13 @@ email: email@orchard.cc
 facebook:
 twitter:
 
-# Jekyll settings
-permalink: /:collection/:categories/:year/:month/:day/:title
-
 # Pagination settings
 pagination:
   items: 5
   links: 5
+
+# Jekyll settings
+permalink: /:collection/:categories/:year/:month/:day/:title
 
 # Collections settings
 collections:
@@ -34,10 +34,18 @@ defaults:
     values:
       layout: "page"
       include: genealogy.html
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
 
 # Build settings
 markdown: kramdown
 plugins:
+  - jekyll-feed
   - jekyll-github-metadata
   - jekyll-remote-theme
+  - jekyll-sitemap
 remote_theme: orchardcc/jekyll-theme-orchard

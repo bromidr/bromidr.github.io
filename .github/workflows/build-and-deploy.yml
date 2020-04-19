@@ -10,11 +10,30 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
+      # This step is required because this workflow requires a copy of the
+      # code in the repository. For more information about this step, see:
+      # https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow#using-the-checkout-action
+      # https://github.com/actions/checkout
       -
-        name: Checkout
+        name: Checkout Source Repository of Site
         uses: actions/checkout@v2
+
+      # Speed up subsequent workflow runs by caching the Ruby Gems that are
+      # required by the site so that subsequent workflow runs don't have to
+      # re-download and re-install them. For more info about this step, see:
+      # https://help.github.com/en/actions/configuring-and-managing-workflows/caching-dependencies-to-speed-up-workflows
+      # https://github.com/actions/cache/blob/master/examples.md#ruby---bundler
       -
-        name: Build and Deploy
+        name: Cache Ruby Gems Required by Site
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+
+      -
+        name: Build and Deploy Site from Source
         uses: ./.github/actions/build-and-deploy
         env:
           GITHUB_ACTOR: ${{ secrets.GITHUB_ACTOR }}

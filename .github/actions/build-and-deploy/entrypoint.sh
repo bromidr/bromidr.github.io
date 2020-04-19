@@ -6,7 +6,9 @@ set -e
 echo "Installing dependencies required by site..."
 
 # Install Jekyll site dependencies as defined by the Gemfile
-bundle install
+# @see: https://github.com/actions/cache/blob/master/examples.md#ruby---bundler
+bundle config path vendor/bundle
+bundle install --jobs 4 --retry 3
 
 echo "Dependencies installed. Building site using Jekyll..."
 
@@ -57,7 +59,7 @@ git commit \
     -m "Triggered by: ${GITHUB_SHA} commit of ${GITHUB_REF} branch of ${GITHUB_REPOSITORY} repository"
 
 # Push the commit to the gh-pages branch of the remote repository
-git push --force ${REMOTE_REPO} master:${REMOTE_BRANCH}
+git push --force ${REMOTE_REPO} ${GITHUB_REF}:${REMOTE_BRANCH}
 
 # Presumably, these commands are unnecessary. Presumably, the virtual machine
 # used to run the GitHub Actions workflow is destroyed once the jobs are done
