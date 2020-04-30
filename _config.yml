@@ -32,11 +32,10 @@ defaults:
       path: "_bible/person"
       type: "bible"
     values:
-      layout: "page"
-      include: genealogy.html
+      layout: "person"
   -
     scope:
-      path: "_posts"
+      path: ""
       type: "posts"
     values:
       layout: "post"
