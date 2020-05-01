@@ -2,9 +2,9 @@
 categories: [World]
 tags: [Knowledge, Prophecy, Spirit, Trust]
 description: >- # description must be indented because we are using block scalar
-  Our knowledge is fragmentary and incomplete. We only know in part, so we can
-  only prophesy in part. This is because we can only speak of what we know. And
-  what we know is incomplete and partial.
+  You should follow the guidance that the Lord gives you (whether it be directly
+  through prayer or indirectly through prophets) lest you miss the connections
+  that the Lord has prepared for you.
 image:
   path: https://user-images.githubusercontent.com/45976390/79184573-85daa080-7de2-11ea-9c28-add63ae2e411.jpg
   caption: >-
