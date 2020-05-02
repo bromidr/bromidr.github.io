@@ -1,8 +1,15 @@
-name: 'Build and Deploy'
-description: 'Build and deploy Jekyll site to the gh-pages branch of repository'
+name: 'Jekyll Build and Deploy to GitHub Pages'
+description: 'Build Jekyll site and deploy to the master or gh-pages branch of repository'
+inputs:
+  publishing_dest:
+    description: 'The branch of your repo where you want your site to be published. Should be either master or gh-pages.'
+    required: false
+    default: 'gh-pages'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.publishing_dest }}
 branding:
   icon: 'cast'
   color: 'purple'

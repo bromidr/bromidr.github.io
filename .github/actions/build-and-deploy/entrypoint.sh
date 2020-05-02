@@ -9,15 +9,16 @@ echo "Validating parameters of requested action..."
 # we will be deploying the Jekyll-generated site to
 REMOTE_REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
-# if it is a project site, then publishing destination may be:
-# - gh-pages branch (default)
-# - master branch
-# - /docs folder of master branch
-# if it is a user or organization site, then publishing
-# destination may only be the root of the master branch
-# @see: https://help.github.com/en/github/working-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites
-if [[ "${GITHUB_REPOSITORY}" == *".github.io" ]]; then
+# User or organization site, thus the only publishing
+# destination option is the root of the master branch
+if [[ "${GITHUB_REPOSITORY}" == *".github.io" || "${GITHUB_REPOSITORY}" == *".github.com" ]]; then
   REMOTE_BRANCH="refs/heads/master"
+
+# A project site can only be published from the master or
+# gh-pages branch. So, if the user specifies one of those
+# branches, use it; otherwise defaults to gh-pages branch
+elif [[ "${INPUT_PUBLISHING_DEST}" == "master" || "${INPUT_PUBLISHING_DEST}" == "gh-pages" ]]; then
+  REMOTE_BRANCH="refs/heads/${INPUT_PUBLISHING_DEST}"
 else
   REMOTE_BRANCH="refs/heads/gh-pages"
 fi
