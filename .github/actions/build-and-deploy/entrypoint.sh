@@ -23,9 +23,9 @@ else
     https://api.github.com/repos/${GITHUB_ACTOR}/${GITHUB_REPOSITORY}/pages)
 
   # Because I don't know what I'm doing...
-  echo RESPONSE
+  echo ${RESPONSE}
   PUB_BRANCH=$(echo ${RESPONSE} | jq '.source.branch' | tr -d '"')
-  PUB_DIR=$(echo ${RESPONSE} | jq '.source.directory' | tr -d '"')
+  PUB_DIR=$(echo ${RESPONSE} | jq '.source.path' | tr -d '"')
   echo "${PUB_BRANCH} ${PUB_DIR}"
   # ...I echo this stuff to see if it works
 
