@@ -14,12 +14,21 @@ REMOTE_REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITO
 if [[ "${GITHUB_REPOSITORY}" == *".github.io" || "${GITHUB_REPOSITORY}" == *".github.com" ]]; then
   REMOTE_BRANCH="refs/heads/master"
 
-# A project site can only be published from the master or
-# gh-pages branch. So, if the user specifies one of those
-# branches, use it; otherwise defaults to gh-pages branch
-elif [[ "${INPUT_PUBLISHING_DEST}" == "master" || "${INPUT_PUBLISHING_DEST}" == "gh-pages" ]]; then
-  REMOTE_BRANCH="refs/heads/${INPUT_PUBLISHING_DEST}"
+# A project site can only be published from the master or gh-pages branch.
+# Ergo, determine which branch the repository's publishing destination is.
 else
+  RESPONSE=$(curl \
+    --header "Accept: application/vnd.github.v3+json" \
+    --header "Authorization: token ${GITHUB_TOKEN}" \
+    https://api.github.com/repos/${GITHUB_ACTOR}/${GITHUB_REPOSITORY}/pages)
+
+  # Because I don't know what I'm doing...
+  echo RESPONSE
+  PUB_BRANCH=$(echo ${RESPONSE} | jq '.source.branch' | tr -d '"')
+  PUB_DIR=$(echo ${RESPONSE} | jq '.source.directory' | tr -d '"')
+  echo "${PUB_BRANCH} ${PUB_DIR}"
+  # ...I echo this stuff to see if it works
+
   REMOTE_BRANCH="refs/heads/gh-pages"
 fi
 
