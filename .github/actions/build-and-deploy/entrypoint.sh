@@ -11,10 +11,12 @@ GEMFILE_LOC="$(find . -type d -name "vendor" -prune -o -type f -name "Gemfile")"
 if [[ -z "${GEMFILE_LOC}" ]]; then
   echo "Cannot find Gemfile"
   exit 1
+else
+  echo "...Gemfile: ${GEMFILE_LOC}"
 fi
 
-# Look for the Gemfile.lock. This file is required because the --deployment
-# option is used in the bundle install command. See below for more details.
+# Look for the Gemfile.lock. This file is required because the deployment
+# option is set to true in the bundle config. See below for more details.
 if [[ -z "$(find . -type d -name "vendor" -prune -o -type f -name "Gemfile.lock")" ]]; then
   echo "Cannot find Gemfile.lock"
   exit 1
@@ -27,6 +29,7 @@ if [[ -z "${SRC_DIR}" ]]; then
   exit 1
 else
   SRC_DIR="${SRC_DIR}/"
+  echo "...Source Directory: ${SRC_DIR}"
 fi
 
 # Define the remote git repository where the
@@ -75,16 +78,18 @@ fi
 
 echo "Parameters validated. Installing dependencies required by site..."
 
-# Install Jekyll site dependencies. Since the --deployment option is being used,
+# Installs Jekyll site dependencies. Since the deployment config option is used,
 # a Gemfile.lock file is needed to ensure that the same versions of the gems you
 # developed and tested with are also used in deployments. Thus, the existence of
 # a Gemfile and Gemfile.lock in your repository is required and validated above.
 # @see: https://bundler.io/v2.0/man/bundle-install.1.html#DEPLOYMENT-MODE
 # @see: https://bundler.io/v2.0/guides/deploying.html#deploying-your-application
 # @see: https://github.com/actions/cache/blob/master/examples.md#ruby---bundler
-bundle config gemfile ${GEMFILE_LOC}
-bundle config path vendor/bundle
-bundle install --deployment --jobs 4 --retry 3
+bundle config set deployment true
+bundle config set gemfile ${GEMFILE_LOC}
+bundle config set path vendor/bundle
+bundle config list # for debugging purposes
+bundle install --jobs 4 --retry 3
 
 echo "Dependencies installed. Building site using Jekyll..."
 
