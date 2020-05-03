@@ -7,7 +7,7 @@ echo "Validating parameters of requested action..."
 
 # Look for the Gemfile; ideally it would be in the current working
 # directory (GITHUB_WORKSPACE) but let us not make that assumption
-GEMFILE_LOC="$(find . -type d -name "vendor" -prune -o -type f -name "Gemfile")"
+GEMFILE_LOC="$(find . -type d -path './vendor' -prune -o -type f -name 'Gemfile' -exec echo {} \;)"
 if [[ -z "${GEMFILE_LOC}" ]]; then
   echo "Cannot find Gemfile"
   exit 1
@@ -17,13 +17,13 @@ fi
 
 # Look for the Gemfile.lock. This file is required because the deployment
 # option is set to true in the bundle config. See below for more details.
-if [[ -z "$(find . -type d -name "vendor" -prune -o -type f -name "Gemfile.lock")" ]]; then
+if [[ -z "$(find . -type d -path './vendor' -prune -o -type f -name 'Gemfile.lock' -exec echo {} \;)" ]]; then
   echo "Cannot find Gemfile.lock"
   exit 1
 fi
 
 # Look for the root of the source directory
-SRC_DIR="$(find . -type d -name "vendor" -prune -o -type f -name "_config.yml" -exec dirname {} \;)"
+SRC_DIR="$(find . -type d -path './vendor' -prune -o -type f -name '_config.yml' -exec dirname {} \;)"
 if [[ -z "${SRC_DIR}" ]]; then
   echo "Cannot find _config.yml"
   exit 1
