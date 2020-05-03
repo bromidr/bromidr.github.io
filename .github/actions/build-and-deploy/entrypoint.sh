@@ -5,9 +5,29 @@ set -e
 
 echo "Validating parameters of requested action..."
 
-# For now, defaults to the current working directory;
-# later, automatically determine the source directory
-SRC_DIR="./"
+# Look for the Gemfile; ideally it would be in the current working
+# directory (GITHUB_WORKSPACE) but let us not make that assumption
+GEMFILE_LOC="$(find . -type d -name "vendor" -prune -o -type f -name "Gemfile")"
+if [[ -z "${GEMFILE_LOC}" ]]; then
+  echo "Cannot find Gemfile"
+  exit 1
+if
+
+# Look for the Gemfile.lock. This file is required because the --deployment
+# option is used in the bundle install command. See below for more details.
+if [[ -z "$(find . -type d -name "vendor" -prune -o -type f -name "Gemfile.lock")" ]]; then
+  echo "Cannot find Gemfile.lock"
+  exit 1
+if
+
+# Look for the root of the source directory
+SRC_DIR="$(find . -type d -name "vendor" -prune -o -type f -name "_config.yml" -exec dirname {} \;)"
+if [[ -z "${SRC_DIR}" ]]; then
+  echo "Cannot find _config.yml"
+  exit 1
+else
+  SRC_DIR="${SRC_DIR}/"
+if
 
 # Define the remote git repository where the
 # Jekyll-generated site ought to be deployed
@@ -55,10 +75,16 @@ fi
 
 echo "Parameters validated. Installing dependencies required by site..."
 
-# Install Jekyll site dependencies as defined by the Gemfile
+# Install Jekyll site dependencies. Since the --deployment option is being used,
+# a Gemfile.lock file is needed to ensure that the same versions of the gems you
+# developed and tested with are also used in deployments. Thus, the existence of
+# a Gemfile and Gemfile.lock in your repository is required and validated above.
+# @see: https://bundler.io/v2.0/man/bundle-install.1.html#DEPLOYMENT-MODE
+# @see: https://bundler.io/v2.0/guides/deploying.html#deploying-your-application
 # @see: https://github.com/actions/cache/blob/master/examples.md#ruby---bundler
+bundle config gemfile ${GEMFILE_LOC}
 bundle config path vendor/bundle
-bundle install --jobs 4 --retry 3
+bundle install --deployment --jobs 4 --retry 3
 
 echo "Dependencies installed. Building site using Jekyll..."
 
@@ -67,7 +93,7 @@ echo "Dependencies installed. Building site using Jekyll..."
 # set JEKYLL_GITHUB_TOKEN for it to get your github data
 # @see: https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md
 JEKYLL_ENV=production JEKYLL_GITHUB_TOKEN=${GITHUB_TOKEN} \
-bundle exec jekyll build --destination ${DEST_DIR} --profile --trace --verbose
+bundle exec jekyll build --source ${SRC_DIR} --destination ${DEST_DIR} --profile --trace --verbose
 
 echo "Site built. Priming site for deployment..."
 
@@ -108,7 +134,7 @@ echo "Site deployed. Removing files generated whilst building and deploying site
 # used to run the GitHub Actions workflow is destroyed once the jobs are done
 rm -rf .git
 cd ..
-bundle exec jekyll clean --destination ${DEST_DIR}
+bundle exec jekyll clean --source ${SRC_DIR} --destination ${DEST_DIR}
 
 echo "Files removed. All done. Huzzah!"
 exit 0
