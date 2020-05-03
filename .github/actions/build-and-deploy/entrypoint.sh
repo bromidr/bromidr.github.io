@@ -11,14 +11,14 @@ GEMFILE_LOC="$(find . -type d -name "vendor" -prune -o -type f -name "Gemfile")"
 if [[ -z "${GEMFILE_LOC}" ]]; then
   echo "Cannot find Gemfile"
   exit 1
-if
+fi
 
 # Look for the Gemfile.lock. This file is required because the --deployment
 # option is used in the bundle install command. See below for more details.
 if [[ -z "$(find . -type d -name "vendor" -prune -o -type f -name "Gemfile.lock")" ]]; then
   echo "Cannot find Gemfile.lock"
   exit 1
-if
+fi
 
 # Look for the root of the source directory
 SRC_DIR="$(find . -type d -name "vendor" -prune -o -type f -name "_config.yml" -exec dirname {} \;)"
@@ -27,7 +27,7 @@ if [[ -z "${SRC_DIR}" ]]; then
   exit 1
 else
   SRC_DIR="${SRC_DIR}/"
-if
+fi
 
 # Define the remote git repository where the
 # Jekyll-generated site ought to be deployed
