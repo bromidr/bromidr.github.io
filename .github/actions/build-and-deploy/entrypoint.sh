@@ -5,37 +5,52 @@ set -e
 
 echo "Validating parameters of requested action..."
 
-# Define the remote git repository and branch where
-# we will be deploying the Jekyll-generated site to
+# For now, defaults to the current working directory;
+# later, automatically determine the source directory
+SRC_DIR="./"
+
+# Define the remote git repository where the
+# Jekyll-generated site ought to be deployed
 REMOTE_REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
-# User or organization site, thus the only publishing
-# destination option is the root of the master branch
-if [[ "${GITHUB_REPOSITORY}" == *".github.io" || "${GITHUB_REPOSITORY}" == *".github.com" ]]; then
-  REMOTE_BRANCH="refs/heads/master"
+# Get information about a GitHub Pages site; specifically, I want
+# to know the repository's publishing source branch and directory
+# @see: https://developer.github.com/v3/repos/pages/
+API_RESPONSE=$(curl \
+  --header "Accept: application/vnd.github.v3+json" \
+  --header "Authorization: Bearer ${GITHUB_TOKEN}" \
+  --request GET \
+  --url https://api.github.com/repos/${GITHUB_REPOSITORY}/pages)
 
-# A project site can only be published from the master or gh-pages branch.
-# Ergo, determine which branch the repository's publishing destination is.
-else
-  RESPONSE=$(curl \
-    --header "Accept: application/vnd.github.v3+json" \
-    --header "Authorization: token ${GITHUB_TOKEN}" \
-    https://api.github.com/repos/${GITHUB_ACTOR}/${GITHUB_REPOSITORY}/pages)
+# If it is a user or organization site, then the value of DEST_BRANCH will equal
+# "master" whilst the value of DEST_DIR will equal "/". On the other hand, if it
+# is a project repo site, then the value of DEST_BRANCH shall either be "master"
+# or "gh-pages". For project site, if the value of DEST_BRANCH equal "gh-pages",
+# then the value of DEST_DIR can only be "/". On the other hand, if the value of
+# DEST_BRANCH for project sites is "master", then DEST_DIR can be "/" or "/docs"
+# @see: https://help.github.com/en/github/working-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites
+DEST_BRANCH="refs/heads/$(echo ${API_RESPONSE} | jq '.source.branch' | tr -d '"')"
+DEST_DIR=".$(echo ${API_RESPONSE} | jq '.source.path' | tr -d '"')"
 
-  # Because I don't know what I'm doing...
-  echo ${RESPONSE}
-  PUB_BRANCH=$(echo ${RESPONSE} | jq '.source.branch' | tr -d '"')
-  PUB_DIR=$(echo ${RESPONSE} | jq '.source.path' | tr -d '"')
-  echo "${PUB_BRANCH} ${PUB_DIR}"
-  # ...I echo this stuff to see if it works
-
-  REMOTE_BRANCH="refs/heads/gh-pages"
+# Protects me from my stupidness. The source branch cannot be the same as
+# the destination branch if source directory is equals to the destination
+# directory. They can be the same if the source and destination directory
+# are different. This is the case when "/" of master branch is the source
+# directory whilst "/docs" of the master branch is destination directory.
+if [[ "${GITHUB_REF}" == "${DEST_BRANCH}" && "${SRC_DIR}" == "${DEST_DIR}"]]; then
+  echo "Destination (Branch: ${DEST_BRANCH}, Directory: ${DEST_DIR}) cannot be same as source (Branch: ${GITHUB_REF}, Directory: ${SRC_DIR})"
+  exit 1
 fi
 
-# Protect me from my stupidity
-if [[ "${GITHUB_REF}" == "${REMOTE_BRANCH}" ]]; then
-  echo "Destination (${REMOTE_BRANCH}) cannot be same as source (${GITHUB_REF})"
-  exit 1
+# if the github pages' publishing source directory is the root of the repository
+# then output the Jekyll-generated site to the "./_site" directory (the default)
+if [[ "${DEST_DIR}" == "./" ]]; then
+  DEST_DIR="./_site"
+
+# if the github pages' publishing source directory is the "./docs" folder, must
+# remove previous version before new version is Jekyll-generated to that folder
+elif [[ "${DEST_DIR}" == "./docs" ]]; then
+  rm -rf "${DEST_DIR}"
 fi
 
 echo "Parameters validated. Installing dependencies required by site..."
@@ -47,21 +62,17 @@ bundle install --jobs 4 --retry 3
 
 echo "Dependencies installed. Building site using Jekyll..."
 
-# Defines the directory where Jekyll shall write
-# the files it generates when it builds the site
-JEKYLL_DEST_DIR="./_site"
-
 # Build the Jekyll site
 # If you use the jekyll-github-metadata plugin, you must
 # set JEKYLL_GITHUB_TOKEN for it to get your github data
 # @see: https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md
 JEKYLL_ENV=production JEKYLL_GITHUB_TOKEN=${GITHUB_TOKEN} \
-bundle exec jekyll build --destination ${JEKYLL_DEST_DIR} --trace --verbose
+bundle exec jekyll build --destination ${DEST_DIR} --profile --trace --verbose
 
 echo "Site built. Priming site for deployment..."
 
 # Go to the directory where the Jekyll-generated site resides
-cd ${JEKYLL_DEST_DIR}
+cd ${DEST_DIR}
 
 # Since we are building the site using Jekyll, it would be redundant for GitHub
 # Pages to build the site again. Adding a .nojekyll file avoids such a scenario
@@ -71,7 +82,7 @@ touch .nojekyll
 # This file is unnecessary
 rm -f README.md
 
-echo "Site primed. Deploying site to ${REMOTE_BRANCH} branch of ${GITHUB_REPOSITORY} repository..."
+echo "Site primed. Deploying site to ${DEST_BRANCH} branch of ${GITHUB_REPOSITORY} repository..."
 
 # Initialize a new local git repository
 git init
@@ -88,8 +99,8 @@ git commit \
     -m "Initiated by: ${GITHUB_ACTOR}" \
     -m "Triggered by: ${GITHUB_SHA} commit of ${GITHUB_REF} branch of ${GITHUB_REPOSITORY} repository"
 
-# Push the commit to the gh-pages branch of the remote repository
-git push --force ${REMOTE_REPO} ${GITHUB_REF}:${REMOTE_BRANCH}
+# Push the commit to the remote repository's publishing source branch
+git push --force ${REMOTE_REPO} ${GITHUB_REF}:${DEST_BRANCH}
 
 echo "Site deployed. Removing files generated whilst building and deploying site..."
 
@@ -97,7 +108,7 @@ echo "Site deployed. Removing files generated whilst building and deploying site
 # used to run the GitHub Actions workflow is destroyed once the jobs are done
 rm -rf .git
 cd ..
-bundle exec jekyll clean --destination ${JEKYLL_DEST_DIR}
+bundle exec jekyll clean --destination ${DEST_DIR}
 
 echo "Files removed. All done. Huzzah!"
 exit 0
