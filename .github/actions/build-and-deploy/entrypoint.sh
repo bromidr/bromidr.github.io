@@ -37,7 +37,7 @@ DEST_DIR=".$(echo ${API_RESPONSE} | jq '.source.path' | tr -d '"')"
 # directory. They can be the same if the source and destination directory
 # are different. This is the case when "/" of master branch is the source
 # directory whilst "/docs" of the master branch is destination directory.
-if [[ "${GITHUB_REF}" == "${DEST_BRANCH}" && "${SRC_DIR}" == "${DEST_DIR}"]]; then
+if [[ "${GITHUB_REF}" == "${DEST_BRANCH}" && "${SRC_DIR}" == "${DEST_DIR}" ]]; then
   echo "Destination (Branch: ${DEST_BRANCH}, Directory: ${DEST_DIR}) cannot be same as source (Branch: ${GITHUB_REF}, Directory: ${SRC_DIR})"
   exit 1
 fi
