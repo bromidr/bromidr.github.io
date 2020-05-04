@@ -7,12 +7,12 @@ echo "Validating parameters of requested action..."
 
 # Look for the Gemfile; ideally it would be in the current working
 # directory (GITHUB_WORKSPACE) but let us not make that assumption
-BUNDLE_GEMFILE="$(find . -type d -path './vendor' -prune -o -type f -name 'Gemfile' -exec echo {} \;)"
-if [[ -z "${BUNDLE_GEMFILE}" ]]; then
+GEMFILE_LOC="$(find . -type d -path './vendor' -prune -o -type f -name 'Gemfile' -exec echo {} \;)"
+if [[ -z "${GEMFILE_LOC}" ]]; then
   echo "Cannot find Gemfile"
   exit 1
 else
-  echo "...Gemfile: ${BUNDLE_GEMFILE}"
+  echo "...Gemfile: ${GEMFILE_LOC}"
 fi
 
 # Look for the Gemfile.lock. This file is required because the deployment
@@ -86,10 +86,10 @@ echo "Parameters validated. Installing dependencies required by site..."
 # @see: https://bundler.io/v2.0/guides/deploying.html#deploying-your-application
 # @see: https://github.com/actions/cache/blob/master/examples.md#ruby---bundler
 bundle config set deployment true
-bundle config set gemfile ${BUNDLE_GEMFILE}
+bundle config set gemfile ${GEMFILE_LOC}
 bundle config set path vendor/bundle
 bundle config list # for debugging purposes
-bundle install --jobs 4 --retry 3
+BUNDLE_GEMFILE=${GEMFILE_LOC} bundle install --jobs 4 --retry 3
 
 echo "Dependencies installed. Building site using Jekyll..."
 
@@ -97,7 +97,7 @@ echo "Dependencies installed. Building site using Jekyll..."
 # If you use the jekyll-github-metadata plugin, you must
 # set JEKYLL_GITHUB_TOKEN for it to get your github data
 # @see: https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md
-JEKYLL_ENV=production JEKYLL_GITHUB_TOKEN=${GITHUB_TOKEN} \
+BUNDLE_GEMFILE=${GEMFILE_LOC} JEKYLL_ENV=production JEKYLL_GITHUB_TOKEN=${GITHUB_TOKEN} \
 bundle exec jekyll build --source ${SRC_DIR} --destination ${DEST_DIR} --profile --trace --verbose
 
 echo "Site built. Priming site for deployment..."
@@ -139,7 +139,7 @@ echo "Site deployed. Removing files generated whilst building and deploying site
 # used to run the GitHub Actions workflow is destroyed once the jobs are done
 rm -rf .git
 cd ..
-bundle exec jekyll clean --source ${SRC_DIR} --destination ${DEST_DIR}
+BUNDLE_GEMFILE=${GEMFILE_LOC} bundle exec jekyll clean --source ${SRC_DIR} --destination ${DEST_DIR}
 
 echo "Files removed. All done. Huzzah!"
 exit 0
