@@ -85,9 +85,9 @@ echo "Parameters validated. Installing dependencies required by site..."
 # @see: https://bundler.io/v2.0/man/bundle-install.1.html#DEPLOYMENT-MODE
 # @see: https://bundler.io/v2.0/guides/deploying.html#deploying-your-application
 # @see: https://github.com/actions/cache/blob/master/examples.md#ruby---bundler
-bundle config set deployment true
-bundle config set gemfile ${GEMFILE_LOC}
-bundle config set path vendor/bundle
+bundle config --local set deployment true
+bundle config --local set gemfile ${GEMFILE_LOC}
+bundle config --local set path vendor/bundle
 bundle config list # for debugging purposes
 bundle install --jobs 4 --retry 3
 
