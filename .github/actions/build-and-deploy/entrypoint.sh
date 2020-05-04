@@ -7,12 +7,12 @@ echo "Validating parameters of requested action..."
 
 # Look for the Gemfile; ideally it would be in the current working
 # directory (GITHUB_WORKSPACE) but let us not make that assumption
-GEMFILE_LOC="$(find . -type d -path './vendor' -prune -o -type f -name 'Gemfile' -exec echo {} \;)"
-if [[ -z "${GEMFILE_LOC}" ]]; then
+BUNDLE_GEMFILE="$(find . -type d -path './vendor' -prune -o -type f -name 'Gemfile' -exec echo {} \;)"
+if [[ -z "${BUNDLE_GEMFILE}" ]]; then
   echo "Cannot find Gemfile"
   exit 1
 else
-  echo "...Gemfile: ${GEMFILE_LOC}"
+  echo "...Gemfile: ${BUNDLE_GEMFILE}"
 fi
 
 # Look for the Gemfile.lock. This file is required because the deployment
@@ -85,9 +85,9 @@ echo "Parameters validated. Installing dependencies required by site..."
 # @see: https://bundler.io/v2.0/man/bundle-install.1.html#DEPLOYMENT-MODE
 # @see: https://bundler.io/v2.0/guides/deploying.html#deploying-your-application
 # @see: https://github.com/actions/cache/blob/master/examples.md#ruby---bundler
-bundle config --local set deployment true
-bundle config --local set gemfile ${GEMFILE_LOC}
-bundle config --local set path vendor/bundle
+bundle config set deployment true
+bundle config set gemfile ${BUNDLE_GEMFILE}
+bundle config set path vendor/bundle
 bundle config list # for debugging purposes
 bundle install --jobs 4 --retry 3
 
