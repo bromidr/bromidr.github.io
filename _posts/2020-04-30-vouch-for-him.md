@@ -114,6 +114,23 @@ new heart, and all Samuel’s *signs* were fulfilled that day (1 Samuel 10:9 NLT
 Yes, Saul went to see and hear from a man of God; and he witnessed signs come to
 pass, which had a profound effect on his life.
 
+Likewise, men and women of God shall witness signs and wonders come to pass when
+they follow the Lord's direction. Before Jesus came to Samaria, He was in Judea.
+He left Judea and departed again to Galilee. But He needed to go through Samaria
+(John 4:3-4 NKJV). Now, to be clear: Jesus did not *have to* go through Samaria
+to go back to Galilee. At the time, there were more than one route from Judea to
+Galilee. He could have taken a different route back to Galilee from Judea. But
+it says He *needed to* go through Samaria because the Holy Spirit instructed Him
+to take a specific route---Judea to Galilee via Samaria---for a reason: so the
+people of that city would come to believe in Him and be saved. The Lord knew the
+people of that city were ready and receptive to hearing the Good News of Jesus
+Christ. So the Lord sent Jesus there to share the Gospel with them. And as it
+was mentioned earlier, many of the Samaritans of that city decided to believe in
+Him because of the testimony of the woman and the word that He shared with them.
+However, this does not happen if Jesus takes a different route back to Galilee
+from Judea. This only happened because Jesus chose to follow the instructions of
+the Lord by going through Samaria whilst on the way back to Galilee from Judea.
+
 > Do you think the work of harvesting will not begin until the summer ends four
 months from now? Look around you! Vast fields of human souls are ripening all
 around us, and are ready now for reaping. <cite>John 4:35 TLB</cite>

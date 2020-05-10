@@ -11,8 +11,6 @@ GEMFILE_LOC="$(find . -type d -path './vendor' -prune -o -type f -name 'Gemfile'
 if [[ -z "${GEMFILE_LOC}" ]]; then
   echo "Cannot find Gemfile"
   exit 1
-else
-  echo "...Gemfile: ${GEMFILE_LOC}"
 fi
 
 # Look for the Gemfile.lock. This file is required because the deployment
@@ -22,19 +20,19 @@ if [[ -z "$(find . -type d -path './vendor' -prune -o -type f -name 'Gemfile.loc
   exit 1
 fi
 
-# Look for the root of the source directory
+# Look for the root of the source directory; ideally, would be in the current
+# working directory (GITHUB_WORKSPACE) but let us not make such an assumption
 SRC_DIR="$(find . -type d -path './vendor' -prune -o -type f -name '_config.yml' -exec dirname {} \;)"
 if [[ -z "${SRC_DIR}" ]]; then
   echo "Cannot find _config.yml"
   exit 1
 else
   SRC_DIR="${SRC_DIR}/"
-  echo "...Source Directory: ${SRC_DIR}"
 fi
 
 # Define the remote git repository where the
 # Jekyll-generated site ought to be deployed
-REMOTE_REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+DEST_REPO="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
 # Get information about a GitHub Pages site; specifically, I want
 # to know the repository's publishing source branch and directory
@@ -67,6 +65,9 @@ fi
 
 # if the github pages' publishing source directory is the root of the repository
 # then output the Jekyll-generated site to the "./_site" directory (the default)
+# In what case would DEST_DIR be "./"? A case where GITHUB_REF is different from
+# DEST_BRANCH. It's unlikely GITHUB_REF would equal to DEST_BRANCH when DEST_DIR
+# equals "./" because that would mean that SRC_DIR is a subdirectory of DEST_DIR
 if [[ "${DEST_DIR}" == "./" ]]; then
   DEST_DIR="./_site"
 
@@ -88,7 +89,6 @@ echo "Parameters validated. Installing dependencies required by site..."
 bundle config set deployment true
 bundle config set gemfile ${GEMFILE_LOC}
 bundle config set path vendor/bundle
-bundle config list # for debugging purposes
 BUNDLE_GEMFILE=${GEMFILE_LOC} bundle install --jobs 4 --retry 3
 
 echo "Dependencies installed. Building site using Jekyll..."
@@ -131,7 +131,7 @@ git commit \
     -m "Triggered by: ${GITHUB_SHA} commit of ${GITHUB_REF} branch of ${GITHUB_REPOSITORY} repository"
 
 # Push the commit to the remote repository's publishing source branch
-git push --force ${REMOTE_REPO} ${GITHUB_REF}:${DEST_BRANCH}
+git push --force ${DEST_REPO} ${GITHUB_REF}:${DEST_BRANCH}
 
 echo "Site deployed. Removing files generated whilst building and deploying site..."
 
