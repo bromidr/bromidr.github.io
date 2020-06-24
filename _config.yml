@@ -1,4 +1,6 @@
 # Site settings
+url: https://www.orchard.cc
+baseurl: ""
 logo:
 title: Orchard
 alternateTitle:
