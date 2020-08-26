@@ -1,0 +1,34 @@
+{%- assign items_total = items | size | at_least: 1 -%}
+{%- assign items_per_page = site.pagination.items | default: items_total | times: 1.0 -%}
+{%- assign items_container = "posts-list" -%}
+{%- for item in items -%}
+  {%- if forloop.first -%}<ul class="{{- items_container -}}">{%- endif -%}
+  <li id="{{- item.id -}}"><article>
+    {%- include header.html linkify_title=true hide_alternate_title=true hide_figure=true -%}
+  </article></li>
+  {%- if forloop.last -%}</ul>{%- endif -%}
+{%- endfor -%}
+
+{%- include search.html -%}
+<script>
+  let searchCallback = function (value, results) {
+    console.log(value);
+    console.log(results);
+    let listItemsContainer = document.querySelector(".{{- items_container -}}");
+    let listItems = listItemsContainer.querySelectorAll("li");
+    listItemsContainer.setAttribute("hidden", "");
+    if (value) {
+      Array.prototype.forEach.call(listItems, function (element, index) {
+        element.setAttribute("hidden", "");
+      });
+      Array.prototype.forEach.call(results, function (element, index) {
+        document.getElementById(element.item.id).removeAttribute("hidden");
+      });
+    } else {
+      Array.prototype.forEach.call(listItems, function (element, index) {
+        element.removeAttribute("hidden");
+      });
+    }
+    listItemsContainer.removeAttribute("hidden");
+  }
+</script>

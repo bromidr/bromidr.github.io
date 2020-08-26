@@ -1,0 +1,46 @@
+a {
+  color: $color-muted;
+  text-decoration: none;
+  &:link, &:visited {
+    color: $color-primary;
+  }
+}
+
+blockquote {
+  border-left: thick solid $color-primary;
+  padding-left: 1em;
+}
+
+body {
+  font-size: 1.25em;
+  min-height: 100vh;
+}
+
+cite {
+  color: $color-accent;
+  display: block;
+  blockquote &:before {
+    content: "\2014";
+  }
+}
+
+dt {
+  font-weight: bold;
+}
+
+figcaption {
+  font-size: small;
+}
+
+svg.icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+time {
+  color: $color-muted;
+}

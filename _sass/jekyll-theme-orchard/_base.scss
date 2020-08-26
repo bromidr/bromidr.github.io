@@ -1,0 +1,70 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+ * 1. Set the default font-family
+ * 2. Set the default font-size to 1rem (16px)
+ * 3. Set the default line-height to 1.5x the above font-size (24px)
+ * 4. Remove the default 8px margin
+ */
+body {
+  /* 1 */ font-family:
+    system-ui,
+    /* macOS 10.11-10.12 */ -apple-system,
+    /* Windows 6+ */ "Segoe UI",
+    /* Android 4+ */ "Roboto",
+    /* Ubuntu 10.10+ */ "Ubuntu",
+    /* Gnome 3+ */ "Cantarell",
+    /* KDE Plasma 5+ */ "Noto Sans",
+    /* fallback */ sans-serif,
+    /* macOS emoji */ "Apple Color Emoji",
+    /* Windows emoji */ "Segoe UI Emoji",
+    /* Windows emoji */ "Segoe UI Symbol",
+    /* Linux emoji */ "Noto Color Emoji";
+  /* 2 */ font-size: 1rem;
+  /* 3 */ line-height: 1.5;
+  /* 4 */ margin: 0;
+  padding: 0;
+}
+
+/*
+ * Remove the default 40px margin-left/right; keep default 1em margin-bottom/top
+ */
+blockquote, figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/*
+ * Add font inheritance to form elements
+ */
+button, input, select, textarea {
+  font: inherit;
+}
+
+/*
+ * 1. Change from the default inline-block display
+ * 2. Make sure that image maintain its intrinsic
+      aspect ratios when a `max-width` is applied
+ * 3. If, for some reason, the image width is less than the parent container
+      width, then center the image within the parent container (opinionated)
+ * 4. Make sure that the image does not stretch beyond its intrinsic width
+ */
+img {
+  /* 1 */ display: block;
+  /* 2 */ height: auto;
+  /* 3 */ margin-left: auto;
+  /* 3 */ margin-right: auto;
+  /* 4 */ max-width: 100%;
+}
+
+/*
+ * Change from the default list-style-type of `ol` (decimal) and `ul` (disc)
+ * elements in all browsers as well as remove the default 40px padding-left,
+ * but only if it has a class; keep default stylings in class-less contexts.
+ */
+ol[class], ul[class] {
+  list-style-type: none;
+  padding: 0;
+}

@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.0"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    var fuse = null;
+    var index = null;
+
+    let feedUrl = "{{- include.feed_url | default: '/feed.json' | absolute_url -}}";
+    let request = new XMLHttpRequest();
+    request.overrideMimeType("application/json");
+    request.open('GET', feedUrl);
+    request.responseType = "json";
+    request.send();
+    request.onload = function() {
+      const resp = request.response;
+      const options = {
+        keys: ["title", "summary", "tags"]
+      };
+      index = Fuse.createIndex(options.keys, resp.items);
+      fuse = new Fuse(resp.items, options, index);
+    }
+
+    let searchBtn = document.getElementById("search-button");
+    searchBtn.addEventListener('click', function () {
+      let searchBox = document.getElementById("search-box");
+      if (searchBox) {
+        const searchValue = searchBox.value;
+        searchCallback(searchValue, fuse.search(searchValue));
+      }
+    })
+  });
+</script>

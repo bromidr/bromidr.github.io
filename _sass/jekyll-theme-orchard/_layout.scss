@@ -1,0 +1,144 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    "nav nav nav"
+    "header header header"
+    ". main ."
+    ". aside ."
+    ;
+  grid-template-columns:
+    minmax($size-gutter, 1fr)
+    minmax(0, $size-content-max-width)
+    minmax($size-gutter, 1fr)
+    ;
+  grid-template-rows:
+    max-content max-content max-content 1fr
+    ;
+  min-height: 100vh;
+}
+
+.container-aside {
+  border-top: thin solid $color-muted;
+  grid-area: aside;
+  padding-bottom: 1.5em;
+}
+
+.container-header {
+  background-color: $color-secondary;
+  display: grid;
+  grid-area: header;
+  grid-template-areas:
+    "figurehead figurehead figurehead"
+    ". title ."
+    ". description ."
+    ". meta ."
+    ;
+  grid-template-columns:
+    minmax($size-gutter, 1fr)
+    minmax(0, $size-content-max-width)
+    minmax($size-gutter, 1fr)
+    ;
+  text-align: center;
+  .posts-list & {
+    border-bottom: thick solid $color-primary;
+    text-align: left;
+  }
+}
+
+.container-main {
+  grid-area: main;
+}
+
+.container-nav {
+  background-color: #fff;
+  border-bottom: thin solid $color-muted;
+  display: grid;
+  grid-area: nav;
+  grid-template-areas:
+    ". pagesearch ."
+    ;
+  grid-template-columns:
+    minmax($size-gutter, 1fr)
+    minmax(0, $size-content-max-width)
+    minmax($size-gutter, 1fr)
+    ;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.figurehead-caption {
+  border-bottom: thin solid $color-muted;
+  grid-area: caption;
+}
+
+.figurehead-figure {
+  grid-area: figure;
+}
+
+.header-description {
+  grid-area: description;
+  margin: 0;
+}
+
+.header-figurehead {
+  display: grid;
+  grid-area: figurehead;
+  grid-template-areas:
+    "figure figure figure"
+    ". caption ."
+    ;
+  grid-template-columns:
+    minmax($size-gutter, 1fr)
+    minmax(0, $size-content-max-width)
+    minmax($size-gutter, 1fr)
+    ;
+  margin-top: 0;
+}
+
+.header-meta {
+  grid-area: meta;
+}
+
+.header-title {
+  color: $color-primary;
+  grid-area: title;
+  span {
+    color: $color-muted;
+  }
+}
+
+.page-search {
+  display: flex;
+  justify-content: center;
+  grid-area: pagesearch;
+  * + * {
+    margin-left: 0.5em;
+  }
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  li {
+    margin-bottom: $size-gutter;
+  }
+}
+
+.search {
+  display: flex;
+  flex: 1 0 auto;
+  grid-area: search;
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  input {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    flex: 1 0 auto;
+    outline: none;
+  }
+}

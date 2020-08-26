@@ -1,0 +1,28 @@
+---
+---
+
+{
+  "version": "https://jsonfeed.org/version/1",
+  {% if site.title %}"title": {{- site.title | jsonify -}},{% endif %}
+  "home_page_url": "{{- '/' | absolute_url -}}",
+  "feed_url": "{{- '/feed.json' | absolute_url -}}",
+  {%- if site.description -%}"description": {{- site.description | jsonify -}},{%- endif -%}
+  {%- if site.logo -%}"icon": "{{- site.logo | absolute_url -}}",{%- endif -%}
+  "expired": false,
+  "items": [
+    {%- for post in site.posts -%}
+      {
+        "id": "{{- post.id -}}",
+        "url": "{{- post.url | absolute_url -}}",
+        "title": {{- post.title | jsonify -}},
+        "content_text": {{- post.content | strip_html | normalize_whitespace | jsonify -}},
+        {%- if post.description -%}"summary": {{- post.description | jsonify -}},{%- endif -%}
+        {%- if post.image.path -%}"image": "{{- post.image.path | absolute_url -}}",{%- endif -%}
+        "date_published": "{{- post.date | date_to_xmlschema -}}",
+        "date_modified": "{{- post.date | date_to_xmlschema -}}",
+        {%- if post.tags -%}"tags": {{- post.tags | jsonify -}} {%- endif -%}
+      }
+      {%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}

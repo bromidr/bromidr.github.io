@@ -1,0 +1,48 @@
+<script type="application/ld+json">{
+  {%- if "posts" == page.collection -%}
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "{{- page.categories | join: "," | escape -}}",
+    "wordCount": {{- page.content | number_of_words -}},
+
+    "alternativeHeadline": "{{- page.alternateTitle | escape -}}",
+    "author": [
+      {%- assign first = true -%}
+      {%- for author in page.authors -%}
+        {% unless first %},{% endunless %}
+        {
+          "@type": "Person",
+          "name": "{{- author | escape -}}"
+        }
+        {%- assign first = false -%}
+      {%- endfor -%}
+    ],
+    "dateCreated": "{{- page.date | date_to_xmlschema -}}",
+    "dateModified": "{{- page.date | date_to_xmlschema -}}",
+    "datePublished": "{{- page.date | date_to_xmlschema -}}",
+    "headline": "{{- page.title | escape -}}",
+    "inLanguage": "{{- page.lang | default: site.lang | default: 'en' -}}",
+    "keywords": "{{- page.tags | join: "," | escape -}}",
+    "publisher": {
+      "@type": "Organization",
+      "email": "{{- site.email -}}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{- site.logo -}}"
+      },
+      "name": "{{- site.title | escape -}}",
+      "url": "{{- site.url | absolute_url -}}"
+    },
+
+    "description": "{{- page.description -}}",
+    "image": {
+      "@type": "ImageObject",
+      "url": "{{- page.image.path | default: site.image.path -}}"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "url": "{{- page.url | absolute_url -}}"
+    },
+    "url": "{{- page.url | absolute_url -}}"
+  {%- endif -%}
+}</script>

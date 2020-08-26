@@ -1,0 +1,68 @@
+{%- assign linkify_title = include.linkify_title | default: false -%}
+{%- assign hide_alternate_title = include.hide_alternate_title | default: false -%}
+{%- assign hide_figure = include.hide_figure | default: false -%}
+
+<header class="container-header">
+  {%- unless hide_figure -%}
+    {%- assign image_path = item.image.path | default: page.image.path -%}
+    {%- unless nil == image_path -%}
+      <figure class="header-figurehead">
+        <img class="figurehead-figure" src="{{- image_path -}}" />
+        {%- assign image_caption = item.image.caption | default: page.image.caption -%}
+        {%- assign image_credit = item.image.credit | default: page.image.credit -%}
+        {%- unless nil == image_caption and nil == image_credit -%}
+          <figcaption class="figurehead-caption">
+            {{- image_caption -}}
+            <cite>{{- image_credit -}}</cite>
+          </figcaption>
+        {%- endunless -%}
+      </figure>
+    {%- endunless -%}
+  {%- endunless -%}
+
+  {%- capture title -%}{%- if nil == page.collection -%}
+    {{- item.title | default: page.title -}}
+  {%- else -%}
+    {{- item.name | default: item.title | default: page.name | default: page.title -}}
+  {%- endif -%}{%- endcapture -%}
+
+  {%- if "" != title -%}
+    {% if linkify_title %}
+      <h3 class="header-title">
+      <a href="{{- item.url | default: page.url | absolute_url -}}">{{- title -}}</a>
+    {%- else -%}
+      <h1 class="header-title">
+      {{- title -}}
+    {%- endif -%}
+
+    {%- unless hide_alternate_title -%}
+      {%- capture alternateTitle -%}{%- if nil == page.collection -%}
+        {{- item.alternateTitle | default: page.alternateTitle -}}
+      {%- else -%}
+        {{- item.alternateName | default: item.alternateTitle | default: page.alternateName | default: page.alternateTitle -}}
+      {%- endif -%}{%- endcapture -%}
+      {%- if "" != alternateTitle -%}<br><span>{{- alternateTitle -}}</span>{%- endif -%}
+    {%- endunless -%}
+
+    {%- if linkify_title -%}</h3>{%- else -%}</h1>{%- endif -%}
+  {%- endif -%}
+
+  {%- assign description = item.description | default: page.description -%}
+  {%- unless nil == description -%}
+  <p class="header-description">{{- description -}}</p>
+  {%- endunless -%}
+
+  {%- if item.authors or page.authors or item.date or page.date -%}
+    <p class="header-meta">
+      {%- if item.authors or page.authors -%}
+        <cite>{{- item.authors | default: page.authors | join: ", " -}}</cite>
+      {%- endif -%}
+
+      {%- if item.date or page.date and page.date != site.time -%}
+        <time datetime="{{- item.date | default: page.date | date_to_xmlschema -}}">
+          {{- item.date | default: page.date | date_to_long_string -}}
+        </time>
+      {%- endif -%}
+    </p>
+  {%- endif -%}
+</header>

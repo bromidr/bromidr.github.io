@@ -46,7 +46,4 @@ defaults:
 markdown: kramdown
 plugins:
   - jekyll-feed
-  - jekyll-github-metadata
-  - jekyll-remote-theme
   - jekyll-sitemap
-remote_theme: orchardcc/jekyll-theme-orchard
