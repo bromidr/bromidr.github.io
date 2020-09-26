@@ -1,0 +1,9 @@
+<nav class="container-nav">
+  <ul class="nav-bar">
+    <li><a href="{{- '/' | absolute_url -}}"><svg class="icon icon-home"><use xlink:href="#icon-home"></use></svg></a></li>
+    {%- if "posts" == page.collection -%}
+      <li><a {% if page.previous %}href="{{- page.previous | absolute_url -}}"{% endif %}><svg class="icon icon-arrow-left2"><use xlink:href="#icon-arrow-left2"></use></svg></a></li>
+      <li><a {% if page.next %}href="{{- page.next | absolute_url -}}"{% endif %}><svg class="icon icon-arrow-right2"><use xlink:href="#icon-arrow-right2"></use></svg></a></li>
+    {%- endif -%}
+  </ul>
+</nav>

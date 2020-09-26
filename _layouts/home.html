@@ -5,5 +5,5 @@ layout: page
 <main class="container-main">
   {{- content -}}
   {%- assign items = site.posts -%}
-  {%- include list.html -%}
+  {%- include list.html limit=6 -%}
 </main>

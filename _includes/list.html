@@ -1,7 +1,7 @@
 {%- assign items_total = items | size | at_least: 1 -%}
-{%- assign items_per_page = site.pagination.items | default: items_total | times: 1.0 -%}
+{%- assign items_on_page = include.limit | default: items_total | times: 1.0 -%}
 {%- assign items_container = "posts-list" -%}
-{%- for item in items -%}
+{%- for item in items limit:items_on_page -%}
   {%- if forloop.first -%}<ul class="{{- items_container -}}">{%- endif -%}
   <li id="{{- item.id -}}"><article>
     {%- include header.html linkify_title=true hide_alternate_title=true hide_figure=true -%}
