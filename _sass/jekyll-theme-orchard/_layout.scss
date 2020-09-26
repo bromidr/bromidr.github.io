@@ -121,7 +121,7 @@
 .posts-list {
   display: grid;
   grid-gap: $size-gutter;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   li {
     background-color: $color-secondary;
   }

@@ -4,6 +4,8 @@ layout: page
 
 <main class="container-main">
   {{- content -}}
+  <h2>Latest posts</h2>
   {%- assign items = site.posts -%}
   {%- include list.html limit=6 -%}
+  <p>More <a href="{{- '/archive' | absolute_url -}}">recent posts</a></p>
 </main>
