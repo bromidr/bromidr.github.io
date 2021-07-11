@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM ruby:2.6.6
+FROM ruby:2.7.4
 
 # Install packages required by the action; specifically:
 # - jq (https://stedolan.github.io/jq/)
