@@ -23,6 +23,7 @@ pagination:
 permalink: /:collection/:categories/:year/:month/:day/:title
 
 # Collections settings
+collections_dir: content
 collections:
   bible:
     output: true
@@ -31,7 +32,7 @@ collections:
 defaults:
   -
     scope:
-      path: "_bible/person"
+      path: "content/_bible/person"
       type: "bible"
     values:
       layout: "person"
